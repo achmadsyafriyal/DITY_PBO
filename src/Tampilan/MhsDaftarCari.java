@@ -82,10 +82,8 @@ public class MhsDaftarCari extends javax.swing.JFrame {
 
         jPanel1.add(jScrollPane1);
         jScrollPane1.setBounds(210, 130, 452, 230);
-
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\ASUS\\Pictures\\1222dd.jpg")); // NOI18N
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(0, 0, 852, 480);
+        jLabel1.setBounds(0, 0, 0, 480);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
