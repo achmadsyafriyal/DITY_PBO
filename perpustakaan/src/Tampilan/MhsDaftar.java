@@ -86,13 +86,13 @@ public class MhsDaftar extends javax.swing.JFrame {
 
         jLabel16.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel16.setText("Contact");
+        jLabel16.setText("Prodi");
         jPanel2.add(jLabel16);
         jLabel16.setBounds(250, 200, 62, 17);
 
         jLabel18.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel18.setText("NIM");
+        jLabel18.setText("Alamat");
         jPanel2.add(jLabel18);
         jLabel18.setBounds(250, 230, 62, 17);
 
@@ -112,13 +112,13 @@ public class MhsDaftar extends javax.swing.JFrame {
 
         jLabel20.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel20.setText("Address");
+        jLabel20.setText("NIM");
         jPanel2.add(jLabel20);
         jLabel20.setBounds(250, 170, 62, 17);
 
         jLabel21.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel21.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel21.setText("Password");
+        jLabel21.setText("No Telepon");
         jPanel2.add(jLabel21);
         jLabel21.setBounds(250, 260, 62, 17);
         jPanel2.add(textNama);
@@ -126,7 +126,7 @@ public class MhsDaftar extends javax.swing.JFrame {
 
         jLabel22.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel22.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel22.setText("Name");
+        jLabel22.setText("Nama");
         jPanel2.add(jLabel22);
         jLabel22.setBounds(250, 140, 62, 17);
 
@@ -145,10 +145,8 @@ public class MhsDaftar extends javax.swing.JFrame {
         TextKontak.setBounds(380, 200, 180, 20);
         jPanel2.add(textNIM);
         textNIM.setBounds(380, 230, 180, 20);
-
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\ASUS\\Pictures\\1222dd.jpg")); // NOI18N
         jPanel2.add(jLabel2);
-        jLabel2.setBounds(-10, 0, 860, 490);
+        jLabel2.setBounds(0, 50, 860, 490);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
