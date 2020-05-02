@@ -5,6 +5,13 @@
  */
 package Tampilan;
 
+import java.sql.Connection;
+import java.sql.Statement;
+import mainclass.dbConnection;
+import java.awt.HeadlessException;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
 /**
  *
  * @author ASUS
@@ -29,8 +36,8 @@ public class Mhslogin extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
-        usernameMhs = new javax.swing.JTextField();
-        passwordMhs = new javax.swing.JPasswordField();
+        nama = new javax.swing.JTextField();
+        nim = new javax.swing.JPasswordField();
         login = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -50,16 +57,16 @@ public class Mhslogin extends javax.swing.JFrame {
         jLabel5.setText(":");
         jPanel1.add(jLabel5);
         jLabel5.setBounds(300, 140, 5, 53);
-        jPanel1.add(usernameMhs);
-        usernameMhs.setBounds(320, 160, 203, 20);
+        jPanel1.add(nama);
+        nama.setBounds(320, 160, 203, 20);
 
-        passwordMhs.addActionListener(new java.awt.event.ActionListener() {
+        nim.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                passwordMhsActionPerformed(evt);
+                nimActionPerformed(evt);
             }
         });
-        jPanel1.add(passwordMhs);
-        passwordMhs.setBounds(320, 220, 204, 20);
+        jPanel1.add(nim);
+        nim.setBounds(320, 220, 204, 20);
 
         login.setBackground(new java.awt.Color(44, 62, 80));
         login.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
@@ -105,7 +112,6 @@ public class Mhslogin extends javax.swing.JFrame {
         jPanel1.add(Kembali);
         Kembali.setBounds(30, 430, 80, 23);
 
-        jLabel7.setIcon(new javax.swing.ImageIcon("C:\\Users\\ASUS\\Pictures\\1222dd.jpg")); // NOI18N
         jLabel7.setPreferredSize(new java.awt.Dimension(852, 480));
         jPanel1.add(jLabel7);
         jLabel7.setBounds(-30, 0, 852, 480);
@@ -128,17 +134,42 @@ public class Mhslogin extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void passwordMhsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordMhsActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_passwordMhsActionPerformed
-
     private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
         // TODO add your handling code here:
+            try {
+            String Nama = nama.getText();
+            int NIM = Integer.parseInt(nim.getText());
+            Connection con = (Connection) dbConnection.dbConnection();
+            Statement stm = con.createStatement();
+            String sql = "Select * from mahasiswa WHERE nama_mhs = '"+Nama+"' And nim = '"+NIM+"'";
+            ResultSet res = stm.executeQuery(sql);
+        if (res.next()){
+            if (nim.getText().equals(res.getString("nim"))){
+
+            }else{
+                
+                nim.setText("");
+                nim.requestFocus();
+            }
+        MhsCaribuku a = new MhsCaribuku();
+        a.setVisible(true);
+        this.dispose();
+        }else{
+              System.out.println("login gagal");
+              JOptionPane.showMessageDialog(rootPane, "Password salah, silahkan coba lagi");
+        }
+        } catch (SQLException e){
+            JOptionPane.showMessageDialog(null, e);
+        }
     }//GEN-LAST:event_loginActionPerformed
 
     private void KembaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_KembaliActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_KembaliActionPerformed
+
+    private void nimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nimActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nimActionPerformed
 
     /**
      * @param args the command line arguments
@@ -185,7 +216,7 @@ public class Mhslogin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton login;
-    private javax.swing.JPasswordField passwordMhs;
-    private javax.swing.JTextField usernameMhs;
+    private javax.swing.JTextField nama;
+    private javax.swing.JPasswordField nim;
     // End of variables declaration//GEN-END:variables
 }

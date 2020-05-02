@@ -5,6 +5,12 @@
  */
 package Tampilan;
 
+import java.sql.Connection;
+import java.sql.Statement;
+import mainclass.dbConnection;
+import java.awt.HeadlessException;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
 /**
  *
  * @author ASUS
@@ -32,20 +38,20 @@ public class MhsDaftar extends javax.swing.JFrame {
         Daftar = new javax.swing.JToggleButton();
         JUdul = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        textPassword = new javax.swing.JTextField();
+        telepon = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
-        textAlamat = new javax.swing.JTextField();
+        nama = new javax.swing.JTextField();
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
-        textNama = new javax.swing.JTextField();
+        nim = new javax.swing.JTextField();
         jLabel22 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
-        TextKontak = new javax.swing.JTextField();
-        textNIM = new javax.swing.JTextField();
+        prodi = new javax.swing.JTextField();
+        alamat = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -81,8 +87,8 @@ public class MhsDaftar extends javax.swing.JFrame {
         jLabel5.setText(":");
         jPanel2.add(jLabel5);
         jLabel5.setBounds(340, 200, 5, 17);
-        jPanel2.add(textPassword);
-        textPassword.setBounds(380, 260, 180, 20);
+        jPanel2.add(telepon);
+        telepon.setBounds(380, 260, 180, 20);
 
         jLabel16.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(255, 255, 255));
@@ -107,12 +113,18 @@ public class MhsDaftar extends javax.swing.JFrame {
         jLabel19.setText(":");
         jPanel2.add(jLabel19);
         jLabel19.setBounds(340, 170, 5, 17);
-        jPanel2.add(textAlamat);
-        textAlamat.setBounds(380, 170, 180, 20);
+
+        nama.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                namaActionPerformed(evt);
+            }
+        });
+        jPanel2.add(nama);
+        nama.setBounds(380, 170, 180, 20);
 
         jLabel20.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel20.setText("NIM");
+        jLabel20.setText("Nama");
         jPanel2.add(jLabel20);
         jLabel20.setBounds(250, 170, 62, 17);
 
@@ -121,12 +133,12 @@ public class MhsDaftar extends javax.swing.JFrame {
         jLabel21.setText("No Telepon");
         jPanel2.add(jLabel21);
         jLabel21.setBounds(250, 260, 62, 17);
-        jPanel2.add(textNama);
-        textNama.setBounds(380, 140, 180, 20);
+        jPanel2.add(nim);
+        nim.setBounds(380, 140, 180, 20);
 
         jLabel22.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel22.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel22.setText("Nama");
+        jLabel22.setText("NIM");
         jPanel2.add(jLabel22);
         jLabel22.setBounds(250, 140, 62, 17);
 
@@ -141,10 +153,10 @@ public class MhsDaftar extends javax.swing.JFrame {
         jLabel24.setText(":");
         jPanel2.add(jLabel24);
         jLabel24.setBounds(340, 230, 5, 17);
-        jPanel2.add(TextKontak);
-        TextKontak.setBounds(380, 200, 180, 20);
-        jPanel2.add(textNIM);
-        textNIM.setBounds(380, 230, 180, 20);
+        jPanel2.add(prodi);
+        prodi.setBounds(380, 200, 180, 20);
+        jPanel2.add(alamat);
+        alamat.setBounds(380, 230, 180, 20);
         jPanel2.add(jLabel2);
         jLabel2.setBounds(0, 50, 860, 490);
 
@@ -164,11 +176,33 @@ public class MhsDaftar extends javax.swing.JFrame {
 
     private void DaftarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DaftarActionPerformed
         // TODO add your handling code here:
+        int NIM = Integer.parseInt(nim.getText());
+        String Nama = nama.getText();
+        String Prodi = prodi.getText();
+        String Alamat = alamat.getText();
+        int NoTelepon = Integer.parseInt(telepon.getText());
+        
+        
+        try{
+            java.sql.Connection con = (Connection) dbConnection.dbConnection();
+            Statement statement= con.createStatement();
+            String insert = "INSERT INTO `mahasiswa` VALUES ('"+NIM+"','"+Nama+"','"+Prodi+"', '" + Alamat +"', '"+NoTelepon+"')"; 
+            statement.executeUpdate(insert);
+            
+            JOptionPane.showMessageDialog(null, "Data Berhasil Disimpan");
+        } catch (HeadlessException | SQLException e){
+            JOptionPane.showMessageDialog(this, e.getMessage());
+    } 
+        
     }//GEN-LAST:event_DaftarActionPerformed
 
     private void KembaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_KembaliActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_KembaliActionPerformed
+
+    private void namaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_namaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_namaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -209,7 +243,7 @@ public class MhsDaftar extends javax.swing.JFrame {
     private javax.swing.JToggleButton Daftar;
     private javax.swing.JLabel JUdul;
     private javax.swing.JToggleButton Kembali;
-    private javax.swing.JTextField TextKontak;
+    private javax.swing.JTextField alamat;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
@@ -222,9 +256,9 @@ public class MhsDaftar extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField textAlamat;
-    private javax.swing.JTextField textNIM;
-    private javax.swing.JTextField textNama;
-    private javax.swing.JTextField textPassword;
+    private javax.swing.JTextField nama;
+    private javax.swing.JTextField nim;
+    private javax.swing.JTextField prodi;
+    private javax.swing.JTextField telepon;
     // End of variables declaration//GEN-END:variables
 }

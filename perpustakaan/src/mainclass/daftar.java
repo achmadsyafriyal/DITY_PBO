@@ -10,5 +10,11 @@ package mainclass;
  * @author Muhammad Telaga
  */
 public class daftar {
+    String nama;
+    int NIM;
+    String prodi;
+    String alamat;
+    int telepon;
+    
     
 }

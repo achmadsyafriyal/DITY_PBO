@@ -5,6 +5,13 @@
  */
 package Tampilan;
 
+import java.sql.Connection;
+import java.sql.Statement;
+import mainclass.dbConnection;
+import java.awt.HeadlessException;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
 /**
  *
  * @author ASUS
@@ -35,9 +42,9 @@ public class adminlogin extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        textusername = new javax.swing.JTextField();
+        username = new javax.swing.JTextField();
         Login = new javax.swing.JButton();
-        textpassword = new javax.swing.JPasswordField();
+        id = new javax.swing.JPasswordField();
         jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -74,8 +81,8 @@ public class adminlogin extends javax.swing.JFrame {
         jLabel5.setText(":");
         jPanel1.add(jLabel5);
         jLabel5.setBounds(299, 143, 5, 53);
-        jPanel1.add(textusername);
-        textusername.setBounds(322, 160, 203, 20);
+        jPanel1.add(username);
+        username.setBounds(322, 160, 203, 20);
 
         Login.setBackground(new java.awt.Color(44, 62, 80));
         Login.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
@@ -88,15 +95,13 @@ public class adminlogin extends javax.swing.JFrame {
         jPanel1.add(Login);
         Login.setBounds(350, 280, 126, 29);
 
-        textpassword.addActionListener(new java.awt.event.ActionListener() {
+        id.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textpasswordActionPerformed(evt);
+                idActionPerformed(evt);
             }
         });
-        jPanel1.add(textpassword);
-        textpassword.setBounds(321, 213, 204, 20);
-
-        jLabel6.setIcon(new javax.swing.ImageIcon("C:\\Users\\ASUS\\Pictures\\1222dd.jpg")); // NOI18N
+        jPanel1.add(id);
+        id.setBounds(321, 213, 204, 20);
         jPanel1.add(jLabel6);
         jLabel6.setBounds(0, 0, 850, 480);
 
@@ -120,11 +125,36 @@ public class adminlogin extends javax.swing.JFrame {
 
     private void LoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginActionPerformed
         // TODO add your handling code here:
+                    try {
+            String Username = username.getText();
+            int Id = Integer.parseInt(id.getText());
+            Connection con = (Connection) dbConnection.dbConnection();
+            Statement stm = con.createStatement();
+            String sql = "Select * from admin_perpus WHERE nama_admin = '"+Username+"' And id_admin = '"+Id+"'";
+            ResultSet res = stm.executeQuery(sql);
+        if (res.next()){
+            if (id.getText().equals(res.getString("id_admin"))){
+
+            }else{
+                
+                id.setText("");
+                id.requestFocus();
+            }
+        adminPinjamBuku a = new adminPinjamBuku();
+        a.setVisible(true);
+        this.dispose();
+        }else{
+              System.out.println("login gagal");
+              JOptionPane.showMessageDialog(rootPane, "Password salah, silahkan coba lagi");
+        }
+        } catch (SQLException e){
+            JOptionPane.showMessageDialog(null, e);
+        }
     }//GEN-LAST:event_LoginActionPerformed
 
-    private void textpasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textpasswordActionPerformed
+    private void idActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_textpasswordActionPerformed
+    }//GEN-LAST:event_idActionPerformed
 
     /**
      * @param args the command line arguments
@@ -166,6 +196,7 @@ public class adminlogin extends javax.swing.JFrame {
     private javax.swing.JButton Login;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
+    private javax.swing.JPasswordField id;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -173,7 +204,6 @@ public class adminlogin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPasswordField textpassword;
-    private javax.swing.JTextField textusername;
+    private javax.swing.JTextField username;
     // End of variables declaration//GEN-END:variables
 }

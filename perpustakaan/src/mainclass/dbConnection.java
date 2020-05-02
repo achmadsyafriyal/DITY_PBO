@@ -7,25 +7,28 @@ package mainclass;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.sql.Statement;
 /**
  *
  * @author Muhammad Telaga
  */
 public class dbConnection {
-    public static Connection con;
-    public static Statement stm;
-    public static void main(String args[]){
+    private static Connection MYSQLKoneksi;
+    public static Connection dbConnection () throws SQLException {
         try {
-            String url ="jdbc:mysql://localhost/db_perpus";
-            String user="root";
-            String pass="";
-            Class.forName("com.mysql.jdbc.Driver");
-            con =DriverManager.getConnection(url,user,pass);
-            stm = con.createStatement();
-            System.out.println("koneksi berhasil;");
-        } catch (Exception e) {
-            System.err.println("koneksi gagal" +e.getMessage());
+            String url = "jdbc:mysql://localhost/db_perpus";
+            String user = "root";
+            String pass = "";
+            
+            DriverManager.registerDriver(new com.mysql.jdbc.Driver());
+            MYSQLKoneksi = DriverManager.getConnection(url, user, pass);
+        } catch (SQLException e){
+            System.out.println ("Koneksi ke Database gagal " + e.getMessage());
         }
+        
+        return MYSQLKoneksi;
+     
     }
-}
+ }
+
