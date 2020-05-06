@@ -33,7 +33,7 @@ public class MhsCaribuku extends javax.swing.JFrame {
         textcari = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         Kembali = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
+        background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -76,9 +76,9 @@ public class MhsCaribuku extends javax.swing.JFrame {
         jPanel1.add(Kembali);
         Kembali.setBounds(30, 420, 57, 23);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\ASUS\\Pictures\\1222dd.jpg")); // NOI18N
-        jPanel1.add(jLabel2);
-        jLabel2.setBounds(0, 0, 850, 480);
+        background.setIcon(new javax.swing.ImageIcon("C:\\Users\\ASUS\\Pictures\\1222dd.jpg")); // NOI18N
+        jPanel1.add(background);
+        background.setBounds(0, 0, 850, 480);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -140,8 +140,8 @@ public class MhsCaribuku extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Cari;
     private javax.swing.JButton Kembali;
+    private javax.swing.JLabel background;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField textcari;

@@ -44,7 +44,7 @@ public class Mhslogin extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         Kembali = new javax.swing.JToggleButton();
-        jLabel7 = new javax.swing.JLabel();
+        background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -112,9 +112,10 @@ public class Mhslogin extends javax.swing.JFrame {
         jPanel1.add(Kembali);
         Kembali.setBounds(30, 430, 80, 23);
 
-        jLabel7.setPreferredSize(new java.awt.Dimension(852, 480));
-        jPanel1.add(jLabel7);
-        jLabel7.setBounds(-30, 0, 852, 480);
+        background.setIcon(new javax.swing.ImageIcon("D:\\kuliah\\tugas tugas kelas\\PBO\\DITY_PBO-master\\perpustakaan\\src\\Gambar\\1222dd.jpg")); // NOI18N
+        background.setPreferredSize(new java.awt.Dimension(852, 480));
+        jPanel1.add(background);
+        background.setBounds(-30, 0, 852, 480);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -208,12 +209,12 @@ public class Mhslogin extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton Kembali;
+    private javax.swing.JLabel background;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton login;
     private javax.swing.JTextField nama;

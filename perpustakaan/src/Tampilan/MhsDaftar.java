@@ -52,7 +52,10 @@ public class MhsDaftar extends javax.swing.JFrame {
         jLabel24 = new javax.swing.JLabel();
         prodi = new javax.swing.JTextField();
         alamat = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
+        telepon1 = new javax.swing.JTextField();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -88,7 +91,7 @@ public class MhsDaftar extends javax.swing.JFrame {
         jPanel2.add(jLabel5);
         jLabel5.setBounds(340, 200, 5, 17);
         jPanel2.add(telepon);
-        telepon.setBounds(380, 260, 180, 20);
+        telepon.setBounds(380, 290, 180, 20);
 
         jLabel16.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(255, 255, 255));
@@ -106,7 +109,7 @@ public class MhsDaftar extends javax.swing.JFrame {
         jLabel17.setForeground(new java.awt.Color(255, 255, 255));
         jLabel17.setText(":");
         jPanel2.add(jLabel17);
-        jLabel17.setBounds(340, 260, 5, 17);
+        jLabel17.setBounds(340, 290, 5, 17);
 
         jLabel19.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(255, 255, 255));
@@ -130,9 +133,9 @@ public class MhsDaftar extends javax.swing.JFrame {
 
         jLabel21.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel21.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel21.setText("No Telepon");
+        jLabel21.setText("Password");
         jPanel2.add(jLabel21);
-        jLabel21.setBounds(250, 260, 62, 17);
+        jLabel21.setBounds(250, 290, 80, 17);
         jPanel2.add(nim);
         nim.setBounds(380, 140, 180, 20);
 
@@ -157,8 +160,24 @@ public class MhsDaftar extends javax.swing.JFrame {
         prodi.setBounds(380, 200, 180, 20);
         jPanel2.add(alamat);
         alamat.setBounds(380, 230, 180, 20);
-        jPanel2.add(jLabel2);
-        jLabel2.setBounds(0, 50, 860, 490);
+        jPanel2.add(telepon1);
+        telepon1.setBounds(380, 260, 180, 20);
+
+        jLabel25.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel25.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel25.setText(":");
+        jPanel2.add(jLabel25);
+        jLabel25.setBounds(340, 260, 5, 17);
+
+        jLabel26.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel26.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel26.setText("No Telepon");
+        jPanel2.add(jLabel26);
+        jLabel26.setBounds(250, 260, 80, 17);
+
+        background.setIcon(new javax.swing.ImageIcon("D:\\kuliah\\tugas tugas kelas\\PBO\\DITY_PBO-master\\perpustakaan\\src\\Gambar\\1222dd.jpg")); // NOI18N
+        jPanel2.add(background);
+        background.setBounds(0, 0, 860, 490);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -244,21 +263,24 @@ public class MhsDaftar extends javax.swing.JFrame {
     private javax.swing.JLabel JUdul;
     private javax.swing.JToggleButton Kembali;
     private javax.swing.JTextField alamat;
+    private javax.swing.JLabel background;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField nama;
     private javax.swing.JTextField nim;
     private javax.swing.JTextField prodi;
     private javax.swing.JTextField telepon;
+    private javax.swing.JTextField telepon1;
     // End of variables declaration//GEN-END:variables
 }

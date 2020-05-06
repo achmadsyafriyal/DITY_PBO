@@ -57,7 +57,7 @@ public class adminPinjamBuku extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         kembali = new javax.swing.JButton();
-        jLabel16 = new javax.swing.JLabel();
+        background = new javax.swing.JLabel();
 
         jLabel1.setText("jLabel1");
 
@@ -219,9 +219,9 @@ public class adminPinjamBuku extends javax.swing.JFrame {
         jPanel1.add(kembali);
         kembali.setBounds(40, 420, 55, 23);
 
-        jLabel16.setIcon(new javax.swing.ImageIcon("C:\\Users\\ASUS\\Pictures\\1222dd.jpg")); // NOI18N
-        jPanel1.add(jLabel16);
-        jLabel16.setBounds(0, 0, 850, 490);
+        background.setIcon(new javax.swing.ImageIcon("C:\\Users\\ASUS\\Pictures\\1222dd.jpg")); // NOI18N
+        jPanel1.add(background);
+        background.setBounds(0, 0, 850, 490);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -281,6 +281,7 @@ public class adminPinjamBuku extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable Table;
+    private javax.swing.JLabel background;
     private javax.swing.JButton batal;
     private javax.swing.JButton edit;
     private javax.swing.JButton hapus;
@@ -291,7 +292,6 @@ public class adminPinjamBuku extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

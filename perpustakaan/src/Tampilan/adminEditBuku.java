@@ -46,7 +46,7 @@ public class adminEditBuku extends javax.swing.JFrame {
         textkategori = new javax.swing.JTextField();
         textTanggal = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -164,9 +164,9 @@ public class adminEditBuku extends javax.swing.JFrame {
         jPanel1.add(jLabel2);
         jLabel2.setBounds(310, 20, 296, 42);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\ASUS\\Pictures\\1222dd.jpg")); // NOI18N
-        jPanel1.add(jLabel1);
-        jLabel1.setBounds(10, -10, 860, 500);
+        background.setIcon(new javax.swing.ImageIcon("C:\\Users\\ASUS\\Pictures\\1222dd.jpg")); // NOI18N
+        jPanel1.add(background);
+        background.setBounds(0, -10, 860, 490);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -227,10 +227,10 @@ public class adminEditBuku extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable TabelEdit;
+    private javax.swing.JLabel background;
     private javax.swing.JButton batal;
     private javax.swing.JButton edit;
     private javax.swing.JButton hapus;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;

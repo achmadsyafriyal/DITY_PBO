@@ -45,7 +45,7 @@ public class adminlogin extends javax.swing.JFrame {
         username = new javax.swing.JTextField();
         Login = new javax.swing.JButton();
         id = new javax.swing.JPasswordField();
-        jLabel6 = new javax.swing.JLabel();
+        background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -102,8 +102,10 @@ public class adminlogin extends javax.swing.JFrame {
         });
         jPanel1.add(id);
         id.setBounds(321, 213, 204, 20);
-        jPanel1.add(jLabel6);
-        jLabel6.setBounds(0, 0, 850, 480);
+
+        background.setIcon(new javax.swing.ImageIcon("D:\\kuliah\\tugas tugas kelas\\PBO\\DITY_PBO-master\\perpustakaan\\src\\Gambar\\1222dd.jpg")); // NOI18N
+        jPanel1.add(background);
+        background.setBounds(0, 0, 850, 480);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -194,6 +196,7 @@ public class adminlogin extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Login;
+    private javax.swing.JLabel background;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JPasswordField id;
@@ -202,7 +205,6 @@ public class adminlogin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField username;
     // End of variables declaration//GEN-END:variables

@@ -32,7 +32,7 @@ public class MhsDaftarCari extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         TableCari = new javax.swing.JTable();
-        jLabel1 = new javax.swing.JLabel();
+        background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -82,8 +82,10 @@ public class MhsDaftarCari extends javax.swing.JFrame {
 
         jPanel1.add(jScrollPane1);
         jScrollPane1.setBounds(210, 130, 452, 230);
-        jPanel1.add(jLabel1);
-        jLabel1.setBounds(0, 0, 0, 480);
+
+        background.setIcon(new javax.swing.ImageIcon("D:\\kuliah\\tugas tugas kelas\\PBO\\DITY_PBO-master\\perpustakaan\\src\\Gambar\\1222dd.jpg")); // NOI18N
+        jPanel1.add(background);
+        background.setBounds(10, 0, 860, 490);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -141,7 +143,7 @@ public class MhsDaftarCari extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton Kembali;
     private javax.swing.JTable TableCari;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel background;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
