@@ -40,15 +40,15 @@ public class DsnDaftar extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
-        namadosen = new javax.swing.JTextField();
+        NamaDosen = new javax.swing.JTextField();
         jLabel20 = new javax.swing.JLabel();
-        nip = new javax.swing.JTextField();
+        nipdosen = new javax.swing.JTextField();
         jLabel22 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
-        alamat = new javax.swing.JTextField();
+        alamatDosen = new javax.swing.JTextField();
         jLabel21 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
-        telepon = new javax.swing.JTextField();
+        teleponDosen = new javax.swing.JTextField();
         background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -96,21 +96,21 @@ public class DsnDaftar extends javax.swing.JFrame {
         getContentPane().add(jLabel19);
         jLabel19.setBounds(340, 170, 5, 17);
 
-        namadosen.addActionListener(new java.awt.event.ActionListener() {
+        NamaDosen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                namadosenActionPerformed(evt);
+                NamaDosenActionPerformed(evt);
             }
         });
-        getContentPane().add(namadosen);
-        namadosen.setBounds(380, 170, 180, 20);
+        getContentPane().add(NamaDosen);
+        NamaDosen.setBounds(380, 170, 180, 20);
 
         jLabel20.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(255, 255, 255));
         jLabel20.setText("Nama");
         getContentPane().add(jLabel20);
         jLabel20.setBounds(250, 170, 62, 17);
-        getContentPane().add(nip);
-        nip.setBounds(380, 140, 180, 20);
+        getContentPane().add(nipdosen);
+        nipdosen.setBounds(380, 140, 180, 20);
 
         jLabel22.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel22.setForeground(new java.awt.Color(255, 255, 255));
@@ -123,8 +123,8 @@ public class DsnDaftar extends javax.swing.JFrame {
         jLabel23.setText(":");
         getContentPane().add(jLabel23);
         jLabel23.setBounds(340, 140, 5, 17);
-        getContentPane().add(alamat);
-        alamat.setBounds(380, 200, 180, 20);
+        getContentPane().add(alamatDosen);
+        alamatDosen.setBounds(380, 200, 180, 20);
 
         jLabel21.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel21.setForeground(new java.awt.Color(255, 255, 255));
@@ -137,8 +137,8 @@ public class DsnDaftar extends javax.swing.JFrame {
         jLabel25.setText(":");
         getContentPane().add(jLabel25);
         jLabel25.setBounds(340, 230, 5, 17);
-        getContentPane().add(telepon);
-        telepon.setBounds(380, 230, 180, 20);
+        getContentPane().add(teleponDosen);
+        teleponDosen.setBounds(380, 230, 180, 20);
         getContentPane().add(background);
         background.setBounds(0, 0, 860, 470);
 
@@ -151,10 +151,10 @@ public class DsnDaftar extends javax.swing.JFrame {
 
     private void DaftarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DaftarActionPerformed
         // TODO add your handling code here:
-        int NIP = Integer.parseInt(nip.getText());
-        String Nama = namadosen.getText();
-        String Alamat = alamat.getText();
-        int NoTelepon = Integer.parseInt(telepon.getText());
+        int NIP = Integer.parseInt(nipdosen.getText());
+        String Nama = NamaDosen.getText();
+        String Alamat = alamatDosen.getText();
+        int NoTelepon = Integer.parseInt(teleponDosen.getText());
         
         try{
             java.sql.Connection con = (Connection) dbConnection.dbConnection();
@@ -170,9 +170,9 @@ public class DsnDaftar extends javax.swing.JFrame {
         
     }//GEN-LAST:event_DaftarActionPerformed
 
-    private void namadosenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_namadosenActionPerformed
+    private void NamaDosenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NamaDosenActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_namadosenActionPerformed
+    }//GEN-LAST:event_NamaDosenActionPerformed
 
     /**
      * @param args the command line arguments
@@ -213,7 +213,8 @@ public class DsnDaftar extends javax.swing.JFrame {
     private javax.swing.JToggleButton Daftar;
     private javax.swing.JLabel JUdul;
     private javax.swing.JToggleButton Kembali;
-    private javax.swing.JTextField alamat;
+    private javax.swing.JTextField NamaDosen;
+    private javax.swing.JTextField alamatDosen;
     private javax.swing.JLabel background;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel19;
@@ -223,8 +224,7 @@ public class DsnDaftar extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JTextField namadosen;
-    private javax.swing.JTextField nip;
-    private javax.swing.JTextField telepon;
+    private javax.swing.JTextField nipdosen;
+    private javax.swing.JTextField teleponDosen;
     // End of variables declaration//GEN-END:variables
 }

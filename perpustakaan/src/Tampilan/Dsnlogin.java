@@ -35,8 +35,8 @@ public class Dsnlogin extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel5 = new javax.swing.JLabel();
-        nama = new javax.swing.JTextField();
-        nip = new javax.swing.JPasswordField();
+        namaDosen = new javax.swing.JTextField();
+        nipDosen = new javax.swing.JPasswordField();
         login = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -53,16 +53,16 @@ public class Dsnlogin extends javax.swing.JFrame {
         jLabel5.setText(":");
         getContentPane().add(jLabel5);
         jLabel5.setBounds(300, 140, 5, 53);
-        getContentPane().add(nama);
-        nama.setBounds(320, 160, 203, 20);
+        getContentPane().add(namaDosen);
+        namaDosen.setBounds(320, 160, 203, 20);
 
-        nip.addActionListener(new java.awt.event.ActionListener() {
+        nipDosen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nipActionPerformed(evt);
+                nipDosenActionPerformed(evt);
             }
         });
-        getContentPane().add(nip);
-        nip.setBounds(320, 220, 204, 20);
+        getContentPane().add(nipDosen);
+        nipDosen.setBounds(320, 220, 204, 20);
 
         login.setBackground(new java.awt.Color(44, 62, 80));
         login.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
@@ -113,26 +113,26 @@ public class Dsnlogin extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void nipActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nipActionPerformed
+    private void nipDosenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nipDosenActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_nipActionPerformed
+    }//GEN-LAST:event_nipDosenActionPerformed
 
     private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
         // TODO add your handling code here:
                     try {
-            String Nama = nama.getText();
-            int NIP = Integer.parseInt(nip.getText());
+            String Nama = namaDosen.getText();
+            int NIP = Integer.parseInt(nipDosen.getText());
             Connection con = (Connection) dbConnection.dbConnection();
             Statement stm = con.createStatement();
             String sql = "Select * from dosen WHERE nama = '"+Nama+"' And nip = '"+NIP+"'";
             ResultSet res = stm.executeQuery(sql);
         if (res.next()){
-            if (nip.getText().equals(res.getString("nip"))){
+            if (nipDosen.getText().equals(res.getString("nip"))){
 
             }else{
                 
-                nip.setText("");
-                nip.requestFocus();
+                nipDosen.setText("");
+                nipDosen.requestFocus();
             }
         MhsCaribuku a = new MhsCaribuku();
         a.setVisible(true);
@@ -195,7 +195,7 @@ public class Dsnlogin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JButton login;
-    private javax.swing.JTextField nama;
-    private javax.swing.JPasswordField nip;
+    private javax.swing.JTextField namaDosen;
+    private javax.swing.JPasswordField nipDosen;
     // End of variables declaration//GEN-END:variables
 }
