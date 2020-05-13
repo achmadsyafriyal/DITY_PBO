@@ -50,12 +50,6 @@ public class adminPinjamBuku extends javax.swing.JFrame {
         textkatagori = new javax.swing.JTextField();
         textjudul = new javax.swing.JTextField();
         texttanggal = new javax.swing.JTextField();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
         kembali = new javax.swing.JButton();
         background = new javax.swing.JLabel();
 
@@ -92,13 +86,13 @@ public class adminPinjamBuku extends javax.swing.JFrame {
                 {null, null, null, null, null, null}
             },
             new String [] {
-                "Name", "Address", "Contact", "Category", "Title", "Date"
+                "Borrower id", "Nip / Nim", "Book id ", "Admin id ", "Borrowed date ", "Back date "
             }
         ));
         jScrollPane1.setViewportView(Table);
 
         jPanel1.add(jScrollPane1);
-        jScrollPane1.setBounds(310, 120, 452, 190);
+        jScrollPane1.setBounds(340, 120, 490, 220);
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -108,107 +102,71 @@ public class adminPinjamBuku extends javax.swing.JFrame {
 
         simpan.setText("Save");
         jPanel1.add(simpan);
-        simpan.setBounds(390, 330, 57, 23);
+        simpan.setBounds(450, 360, 57, 23);
 
         batal.setText("Cencel");
         jPanel1.add(batal);
-        batal.setBounds(640, 330, 70, 23);
+        batal.setBounds(710, 360, 70, 23);
 
         hapus.setText("Delete");
         jPanel1.add(hapus);
-        hapus.setBounds(550, 330, 63, 23);
+        hapus.setBounds(620, 360, 63, 23);
 
         tambah.setText("Add");
         jPanel1.add(tambah);
-        tambah.setBounds(320, 330, 51, 23);
+        tambah.setBounds(360, 360, 51, 23);
 
         edit.setText("Edit");
         jPanel1.add(edit);
-        edit.setBounds(470, 330, 51, 23);
+        edit.setBounds(540, 360, 51, 23);
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Nama");
+        jLabel3.setText("Borrower  id     :");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(20, 120, 35, 17);
+        jLabel3.setBounds(20, 120, 110, 17);
 
         jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Address");
+        jLabel4.setText("Nip / Nim          :");
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(20, 160, 50, 17);
+        jLabel4.setBounds(20, 160, 110, 17);
 
         jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Contact");
+        jLabel5.setText("Book id             : ");
         jPanel1.add(jLabel5);
-        jLabel5.setBounds(20, 200, 50, 17);
+        jLabel5.setBounds(20, 200, 120, 17);
 
         jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("Category");
+        jLabel6.setText("Admin id          :");
         jPanel1.add(jLabel6);
-        jLabel6.setBounds(20, 240, 60, 17);
+        jLabel6.setBounds(20, 240, 110, 17);
 
         jLabel7.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("Date");
+        jLabel7.setText(" Back date        :");
         jPanel1.add(jLabel7);
-        jLabel7.setBounds(20, 320, 40, 17);
+        jLabel7.setBounds(20, 320, 110, 17);
 
         jLabel8.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("Title");
+        jLabel8.setText("Borrowed date  :");
         jPanel1.add(jLabel8);
-        jLabel8.setBounds(20, 280, 28, 17);
+        jLabel8.setBounds(20, 280, 110, 17);
         jPanel1.add(textnama);
-        textnama.setBounds(100, 120, 180, 20);
+        textnama.setBounds(140, 120, 180, 20);
         jPanel1.add(textalamat);
-        textalamat.setBounds(100, 160, 180, 20);
+        textalamat.setBounds(140, 160, 180, 20);
         jPanel1.add(textkontak);
-        textkontak.setBounds(100, 200, 180, 20);
+        textkontak.setBounds(140, 200, 180, 20);
         jPanel1.add(textkatagori);
-        textkatagori.setBounds(100, 240, 180, 20);
+        textkatagori.setBounds(140, 240, 180, 20);
         jPanel1.add(textjudul);
-        textjudul.setBounds(100, 280, 180, 20);
+        textjudul.setBounds(140, 280, 180, 20);
         jPanel1.add(texttanggal);
-        texttanggal.setBounds(100, 320, 180, 20);
-
-        jLabel10.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setText(":");
-        jPanel1.add(jLabel10);
-        jLabel10.setBounds(80, 120, 5, 20);
-
-        jLabel11.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel11.setText(":");
-        jPanel1.add(jLabel11);
-        jLabel11.setBounds(80, 165, 5, 10);
-
-        jLabel12.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel12.setText(":");
-        jPanel1.add(jLabel12);
-        jLabel12.setBounds(80, 320, 5, 25);
-
-        jLabel13.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel13.setText(":");
-        jPanel1.add(jLabel13);
-        jLabel13.setBounds(80, 200, 5, 20);
-
-        jLabel14.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel14.setText(":");
-        jPanel1.add(jLabel14);
-        jLabel14.setBounds(80, 240, 5, 20);
-
-        jLabel15.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel15.setText(":");
-        jPanel1.add(jLabel15);
-        jLabel15.setBounds(80, 280, 5, 25);
+        texttanggal.setBounds(140, 320, 180, 20);
 
         kembali.setText("Back");
         kembali.addActionListener(new java.awt.event.ActionListener() {
@@ -286,12 +244,6 @@ public class adminPinjamBuku extends javax.swing.JFrame {
     private javax.swing.JButton edit;
     private javax.swing.JButton hapus;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

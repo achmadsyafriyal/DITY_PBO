@@ -139,6 +139,8 @@ public class DsnDaftar extends javax.swing.JFrame {
         jLabel25.setBounds(340, 230, 5, 17);
         getContentPane().add(teleponDosen);
         teleponDosen.setBounds(380, 230, 180, 20);
+
+        background.setIcon(new javax.swing.ImageIcon("D:\\kuliah\\PBO\\TUBES\\DITY_PBO-master\\perpustakaan\\src\\Gambar\\1222dd.jpg")); // NOI18N
         getContentPane().add(background);
         background.setBounds(0, 0, 860, 470);
 
