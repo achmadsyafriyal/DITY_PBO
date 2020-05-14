@@ -73,7 +73,7 @@ public class DsnCaribuku extends javax.swing.JFrame {
         getContentPane().add(Kembali);
         Kembali.setBounds(30, 420, 57, 23);
 
-        background.setIcon(new javax.swing.ImageIcon("C:\\Users\\ASUS\\Pictures\\1222dd.jpg")); // NOI18N
+        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Gambar/1222dd.jpg"))); // NOI18N
         getContentPane().add(background);
         background.setBounds(0, 0, 850, 480);
 

@@ -76,7 +76,7 @@ public class TampilanPengunjung extends javax.swing.JFrame {
         jPanel1.add(daftarakunMhs1);
         daftarakunMhs1.setBounds(360, 230, 126, 29);
 
-        background.setIcon(new javax.swing.ImageIcon("C:\\Users\\ASUS\\Pictures\\1222dd.jpg")); // NOI18N
+        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Gambar/1222dd.jpg"))); // NOI18N
         jPanel1.add(background);
         background.setBounds(0, 0, 860, 490);
 

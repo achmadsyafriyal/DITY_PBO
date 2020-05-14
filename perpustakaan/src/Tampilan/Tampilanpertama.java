@@ -103,8 +103,12 @@ public class Tampilanpertama extends javax.swing.JFrame {
         });
         jPanel1.add(loginmhs1);
         loginmhs1.setBounds(60, 600, 240, 23);
+
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Gambar/mahasiswa.jpg"))); // NOI18N
         jPanel1.add(jLabel10);
-        jLabel10.setBounds(60, 370, 0, 210);
+        jLabel10.setBounds(60, 370, 250, 210);
+
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Gambar/240_F_111584450_zm1XDw3aBAjLKf54VN3Fy7AphrgIr4Sg.jpg"))); // NOI18N
         jPanel1.add(jLabel8);
         jLabel8.setBounds(490, 370, 250, 210);
 
@@ -114,9 +118,9 @@ public class Tampilanpertama extends javax.swing.JFrame {
         jPanel1.add(jLabel6);
         jLabel6.setBounds(50, 80, 680, 130);
 
-        background.setIcon(new javax.swing.ImageIcon("C:\\Users\\ASUS\\Pictures\\1eq.jpg")); // NOI18N
+        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Gambar/1222dd.jpg"))); // NOI18N
         jPanel1.add(background);
-        background.setBounds(0, 0, 1280, 720);
+        background.setBounds(0, -190, 1280, 1110);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

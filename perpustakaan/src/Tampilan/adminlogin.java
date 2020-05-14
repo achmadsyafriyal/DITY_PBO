@@ -66,7 +66,7 @@ public class adminlogin extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Password");
+        jLabel3.setText("Id");
         jPanel1.add(jLabel3);
         jLabel3.setBounds(206, 196, 87, 53);
 
@@ -103,7 +103,7 @@ public class adminlogin extends javax.swing.JFrame {
         jPanel1.add(id);
         id.setBounds(321, 213, 204, 20);
 
-        background.setIcon(new javax.swing.ImageIcon("D:\\kuliah\\tugas tugas kelas\\PBO\\DITY_PBO-master\\perpustakaan\\src\\Gambar\\1222dd.jpg")); // NOI18N
+        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Gambar/1222dd.jpg"))); // NOI18N
         jPanel1.add(background);
         background.setBounds(0, 0, 850, 480);
 

@@ -175,7 +175,7 @@ public class MhsDaftar extends javax.swing.JFrame {
         jPanel2.add(jLabel26);
         jLabel26.setBounds(250, 260, 80, 17);
 
-        background.setIcon(new javax.swing.ImageIcon("D:\\kuliah\\tugas tugas kelas\\PBO\\DITY_PBO-master\\perpustakaan\\src\\Gambar\\1222dd.jpg")); // NOI18N
+        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Gambar/1222dd.jpg"))); // NOI18N
         jPanel2.add(background);
         background.setBounds(0, 0, 860, 490);
 

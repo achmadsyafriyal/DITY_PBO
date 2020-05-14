@@ -107,8 +107,10 @@ public class Dsnlogin extends javax.swing.JFrame {
         });
         getContentPane().add(Kembali);
         Kembali.setBounds(30, 430, 80, 23);
+
+        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Gambar/1222dd.jpg"))); // NOI18N
         getContentPane().add(background);
-        background.setBounds(-30, 0, 0, 480);
+        background.setBounds(-30, 0, 852, 480);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
