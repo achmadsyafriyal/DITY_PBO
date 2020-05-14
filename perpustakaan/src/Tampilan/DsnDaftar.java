@@ -86,7 +86,7 @@ public class DsnDaftar extends javax.swing.JFrame {
 
         jLabel16.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel16.setText("Alamat");
+        jLabel16.setText("Address");
         getContentPane().add(jLabel16);
         jLabel16.setBounds(250, 200, 62, 17);
 
@@ -106,7 +106,7 @@ public class DsnDaftar extends javax.swing.JFrame {
 
         jLabel20.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel20.setText("Nama");
+        jLabel20.setText("Name");
         getContentPane().add(jLabel20);
         jLabel20.setBounds(250, 170, 62, 17);
         getContentPane().add(nipdosen);
@@ -128,7 +128,7 @@ public class DsnDaftar extends javax.swing.JFrame {
 
         jLabel21.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel21.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel21.setText("No Telepon");
+        jLabel21.setText("No phone");
         getContentPane().add(jLabel21);
         jLabel21.setBounds(250, 230, 80, 17);
 

@@ -41,7 +41,7 @@ public class Tampilanpertama extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        background = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
 
         jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
@@ -91,7 +91,7 @@ public class Tampilanpertama extends javax.swing.JFrame {
             }
         });
         jPanel1.add(logiAdmin);
-        logiAdmin.setBounds(490, 600, 240, 23);
+        logiAdmin.setBounds(460, 400, 240, 23);
 
         loginmhs1.setBackground(new java.awt.Color(44, 62, 80));
         loginmhs1.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
@@ -102,35 +102,35 @@ public class Tampilanpertama extends javax.swing.JFrame {
             }
         });
         jPanel1.add(loginmhs1);
-        loginmhs1.setBounds(60, 600, 240, 23);
+        loginmhs1.setBounds(80, 400, 240, 23);
 
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Gambar/mahasiswa.jpg"))); // NOI18N
         jPanel1.add(jLabel10);
-        jLabel10.setBounds(60, 370, 250, 210);
+        jLabel10.setBounds(70, 160, 250, 210);
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Gambar/240_F_111584450_zm1XDw3aBAjLKf54VN3Fy7AphrgIr4Sg.jpg"))); // NOI18N
         jPanel1.add(jLabel8);
-        jLabel8.setBounds(490, 370, 250, 210);
+        jLabel8.setBounds(460, 160, 220, 210);
 
         jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 50)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Library System Application");
         jPanel1.add(jLabel6);
-        jLabel6.setBounds(50, 80, 680, 130);
+        jLabel6.setBounds(110, -30, 680, 130);
 
-        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Gambar/1222dd.jpg"))); // NOI18N
-        jPanel1.add(background);
-        background.setBounds(0, -190, 1280, 1110);
+        jLabel7.setIcon(new javax.swing.ImageIcon("D:\\kuliah\\PBO\\TUBES\\perpustakaan\\src\\Gambar\\1222dd.jpg")); // NOI18N
+        jPanel1.add(jLabel7);
+        jLabel7.setBounds(-6, -6, 970, 480);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1280, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 845, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 720, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 475, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -188,7 +188,6 @@ public class Tampilanpertama extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel background;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -197,6 +196,7 @@ public class Tampilanpertama extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPasswordField jPasswordField1;

@@ -66,7 +66,7 @@ public class Mhslogin extends javax.swing.JFrame {
             }
         });
         jPanel1.add(nim);
-        nim.setBounds(320, 220, 204, 20);
+        nim.setBounds(320, 210, 204, 20);
 
         login.setBackground(new java.awt.Color(44, 62, 80));
         login.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
@@ -83,7 +83,7 @@ public class Mhslogin extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText(":");
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(300, 200, 5, 53);
+        jLabel4.setBounds(300, 190, 5, 53);
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -101,7 +101,7 @@ public class Mhslogin extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Password");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(210, 200, 87, 53);
+        jLabel3.setBounds(210, 190, 87, 53);
 
         Kembali.setText("Back");
         Kembali.addActionListener(new java.awt.event.ActionListener() {
@@ -113,7 +113,6 @@ public class Mhslogin extends javax.swing.JFrame {
         Kembali.setBounds(30, 430, 80, 23);
 
         background.setIcon(new javax.swing.ImageIcon("D:\\kuliah\\tugas tugas kelas\\PBO\\DITY_PBO-master\\perpustakaan\\src\\Gambar\\1222dd.jpg")); // NOI18N
-        background.setPreferredSize(new java.awt.Dimension(852, 480));
         jPanel1.add(background);
         background.setBounds(-30, 0, 852, 480);
 

@@ -101,7 +101,7 @@ public class MhsDaftar extends javax.swing.JFrame {
 
         jLabel18.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel18.setText("Alamat");
+        jLabel18.setText("Address");
         jPanel2.add(jLabel18);
         jLabel18.setBounds(250, 230, 62, 17);
 
@@ -127,7 +127,7 @@ public class MhsDaftar extends javax.swing.JFrame {
 
         jLabel20.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel20.setText("Nama");
+        jLabel20.setText("Name");
         jPanel2.add(jLabel20);
         jLabel20.setBounds(250, 170, 62, 17);
 
@@ -171,7 +171,7 @@ public class MhsDaftar extends javax.swing.JFrame {
 
         jLabel26.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel26.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel26.setText("No Telepon");
+        jLabel26.setText("No phone");
         jPanel2.add(jLabel26);
         jLabel26.setBounds(250, 260, 80, 17);
 

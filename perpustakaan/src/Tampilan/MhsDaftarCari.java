@@ -31,7 +31,7 @@ public class MhsDaftarCari extends javax.swing.JFrame {
         Kembali = new javax.swing.JToggleButton();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        TableCari = new javax.swing.JTable();
+        TabelEdit = new javax.swing.JTable();
         background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -54,34 +54,34 @@ public class MhsDaftarCari extends javax.swing.JFrame {
         jPanel1.add(jLabel2);
         jLabel2.setBounds(340, 30, 240, 50);
 
-        TableCari.setModel(new javax.swing.table.DefaultTableModel(
+        TabelEdit.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "Titel", "Category", "Date"
+                "Book title", "Category", "Book id", "Author", "Publisher", "Publication year"
             }
         ));
-        jScrollPane1.setViewportView(TableCari);
+        jScrollPane1.setViewportView(TabelEdit);
 
         jPanel1.add(jScrollPane1);
-        jScrollPane1.setBounds(210, 130, 452, 230);
+        jScrollPane1.setBounds(130, 100, 640, 270);
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Gambar/1222dd.jpg"))); // NOI18N
         jPanel1.add(background);
@@ -142,7 +142,7 @@ public class MhsDaftarCari extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton Kembali;
-    private javax.swing.JTable TableCari;
+    private javax.swing.JTable TabelEdit;
     private javax.swing.JLabel background;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;

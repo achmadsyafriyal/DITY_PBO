@@ -83,7 +83,7 @@ public class Dsnlogin extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Nama");
+        jLabel1.setText("Name");
         getContentPane().add(jLabel1);
         jLabel1.setBounds(210, 140, 87, 53);
 

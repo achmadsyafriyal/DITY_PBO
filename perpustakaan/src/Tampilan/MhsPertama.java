@@ -65,7 +65,7 @@ public class MhsPertama extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("College Student");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(280, 40, 230, 50);
+        jLabel3.setBounds(280, 40, 280, 50);
 
         Kembali.setText("Back");
         Kembali.addActionListener(new java.awt.event.ActionListener() {

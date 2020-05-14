@@ -35,19 +35,13 @@ public class adminEditBuku extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         kembali = new javax.swing.JButton();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
         tambah = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
         batal = new javax.swing.JButton();
         judul = new javax.swing.JTextField();
         textkategori = new javax.swing.JTextField();
@@ -56,8 +50,9 @@ public class adminEditBuku extends javax.swing.JFrame {
         tahun_terbit = new javax.swing.JTextField();
         id = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        TabelEdit = new javax.swing.JTable();
         background = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -71,19 +66,7 @@ public class adminEditBuku extends javax.swing.JFrame {
             }
         });
         jPanel1.add(kembali);
-        kembali.setBounds(10, 402, 55, 23);
-
-        jLabel12.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel12.setText(":");
-        jPanel1.add(jLabel12);
-        jLabel12.setBounds(84, 197, 5, 25);
-
-        jLabel14.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel14.setText(":");
-        jPanel1.add(jLabel14);
-        jLabel14.setBounds(84, 111, 5, 25);
+        kembali.setBounds(30, 430, 55, 23);
 
         tambah.setText("Add");
         tambah.addActionListener(new java.awt.event.ActionListener() {
@@ -92,67 +75,43 @@ public class adminEditBuku extends javax.swing.JFrame {
             }
         });
         jPanel1.add(tambah);
-        tambah.setBounds(320, 243, 110, 40);
+        tambah.setBounds(410, 370, 80, 30);
 
         jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("Title");
+        jLabel6.setText("Title                   :");
         jPanel1.add(jLabel6);
-        jLabel6.setBounds(10, 115, 28, 17);
-
-        jLabel15.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel15.setText(":");
-        jPanel1.add(jLabel15);
-        jLabel15.setBounds(84, 154, 5, 25);
+        jLabel6.setBounds(10, 160, 120, 17);
 
         jLabel7.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("Pengarang");
+        jLabel7.setText("Author               :");
         jPanel1.add(jLabel7);
-        jLabel7.setBounds(10, 201, 65, 17);
+        jLabel7.setBounds(10, 230, 120, 17);
 
         jLabel8.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("Category");
+        jLabel8.setText("Category            :");
         jPanel1.add(jLabel8);
-        jLabel8.setBounds(10, 158, 60, 17);
+        jLabel8.setBounds(10, 200, 110, 17);
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Penerbit");
+        jLabel1.setText("Publish               :");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(10, 240, 70, 17);
-
-        jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText(":");
-        jPanel1.add(jLabel3);
-        jLabel3.setBounds(80, 240, 10, 17);
+        jLabel1.setBounds(10, 270, 120, 17);
 
         jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Tahun");
+        jLabel4.setText("Publication year  :");
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(10, 280, 50, 17);
-
-        jLabel9.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText(":");
-        jPanel1.add(jLabel9);
-        jLabel9.setBounds(80, 280, 10, 14);
+        jLabel4.setBounds(10, 310, 220, 17);
 
         jLabel10.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setText("Id");
+        jLabel10.setText("Id                       :");
         jPanel1.add(jLabel10);
-        jLabel10.setBounds(10, 80, 40, 14);
-
-        jLabel11.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel11.setText(":");
-        jPanel1.add(jLabel11);
-        jLabel11.setBounds(80, 80, 20, 17);
+        jLabel10.setBounds(10, 120, 120, 14);
 
         batal.setText("Cancel");
         batal.addActionListener(new java.awt.event.ActionListener() {
@@ -161,13 +120,13 @@ public class adminEditBuku extends javax.swing.JFrame {
             }
         });
         jPanel1.add(batal);
-        batal.setBounds(460, 240, 110, 40);
+        batal.setBounds(510, 370, 80, 30);
         jPanel1.add(judul);
-        judul.setBounds(107, 116, 157, 20);
+        judul.setBounds(140, 160, 160, 20);
         jPanel1.add(textkategori);
-        textkategori.setBounds(107, 157, 157, 20);
+        textkategori.setBounds(140, 200, 160, 20);
         jPanel1.add(pengarang);
-        pengarang.setBounds(107, 200, 157, 20);
+        pengarang.setBounds(140, 230, 160, 20);
 
         penerbit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -175,7 +134,7 @@ public class adminEditBuku extends javax.swing.JFrame {
             }
         });
         jPanel1.add(penerbit);
-        penerbit.setBounds(110, 240, 150, 20);
+        penerbit.setBounds(140, 270, 160, 20);
 
         tahun_terbit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -183,9 +142,9 @@ public class adminEditBuku extends javax.swing.JFrame {
             }
         });
         jPanel1.add(tahun_terbit);
-        tahun_terbit.setBounds(110, 280, 150, 20);
+        tahun_terbit.setBounds(140, 310, 160, 20);
         jPanel1.add(id);
-        id.setBounds(110, 80, 150, 20);
+        id.setBounds(140, 120, 160, 20);
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -193,13 +152,38 @@ public class adminEditBuku extends javax.swing.JFrame {
         jPanel1.add(jLabel2);
         jLabel2.setBounds(310, 20, 296, 42);
 
+        TabelEdit.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Book title", "Category", "Book id", "Author", "Publisher", "Publication year"
+            }
+        ));
+        jScrollPane1.setViewportView(TabelEdit);
+
+        jPanel1.add(jScrollPane1);
+        jScrollPane1.setBounds(330, 110, 510, 230);
+
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Gambar/1222dd.jpg"))); // NOI18N
         jPanel1.add(background);
-        background.setBounds(0, 20, 860, 490);
-
-        jLabel5.setText("jLabel5");
-        jPanel1.add(jLabel5);
-        jLabel5.setBounds(70, 280, 34, 14);
+        background.setBounds(0, -20, 860, 510);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -295,24 +279,19 @@ public class adminEditBuku extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable TabelEdit;
     private javax.swing.JLabel background;
     private javax.swing.JButton batal;
     private javax.swing.JTextField id;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField judul;
     private javax.swing.JButton kembali;
     private javax.swing.JTextField penerbit;
