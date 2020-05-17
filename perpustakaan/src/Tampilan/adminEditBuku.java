@@ -8,21 +8,52 @@ import java.sql.Connection;
 import java.sql.Statement;
 import mainclass.dbConnection;
 import java.awt.HeadlessException;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
-
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author ASUS
  */
 public class adminEditBuku extends javax.swing.JFrame {
-
+            DefaultTableModel model = new DefaultTableModel();
     /**
      * Creates new form adminEditBuku
      */
+    public void tampilkan_data(){
+            model.addColumn("ID");
+            model.addColumn("Judul");
+            model.addColumn("Kategori");
+            model.addColumn("Pengarang");
+            model.addColumn("Penerbit");
+            model.addColumn("tahun_terbit");
+
+            
+            
+            
+            try{
+                String sql = "SELECT * FROM buku";
+                java.sql.Connection kon = (Connection)dbConnection.dbConnection();
+                java.sql.Statement stat = kon.createStatement();
+                java.sql.ResultSet res = stat.executeQuery(sql);
+                
+                while (res.next()){
+                    model.addRow(new Object[]{res.getString(1),res.getString(2),res.getString(3),res.getString(4), res.getString(5), res.getString(6)});
+                }   
+                
+                tabelbuku.setModel(model);
+     
+            }catch (SQLException e){
+                System.out.println("error : " + e.getMessage());
+            }
+        }
+    
     public adminEditBuku() {
         initComponents();
-    }
+        tampilkan_data();
+    } 
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -43,6 +74,7 @@ public class adminEditBuku extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         batal = new javax.swing.JButton();
+        hapus = new java.awt.Button();
         judul = new javax.swing.JTextField();
         textkategori = new javax.swing.JTextField();
         pengarang = new javax.swing.JTextField();
@@ -50,8 +82,8 @@ public class adminEditBuku extends javax.swing.JFrame {
         tahun_terbit = new javax.swing.JTextField();
         id = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        TabelEdit = new javax.swing.JTable();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tabelbuku = new javax.swing.JTable();
         background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -121,6 +153,18 @@ public class adminEditBuku extends javax.swing.JFrame {
         });
         jPanel1.add(batal);
         batal.setBounds(510, 370, 80, 30);
+
+        hapus.setActionCommand("Delete");
+        hapus.setLabel("Delete");
+        hapus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                hapusActionPerformed(evt);
+            }
+        });
+        jPanel1.add(hapus);
+        hapus.setBounds(610, 370, 90, 30);
+        hapus.getAccessibleContext().setAccessibleName("Delete");
+
         jPanel1.add(judul);
         judul.setBounds(140, 160, 160, 20);
         jPanel1.add(textkategori);
@@ -152,17 +196,8 @@ public class adminEditBuku extends javax.swing.JFrame {
         jPanel1.add(jLabel2);
         jLabel2.setBounds(310, 20, 296, 42);
 
-        TabelEdit.setModel(new javax.swing.table.DefaultTableModel(
+        tabelbuku.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
@@ -173,13 +208,18 @@ public class adminEditBuku extends javax.swing.JFrame {
                 {null, null, null, null, null, null}
             },
             new String [] {
-                "Book title", "Category", "Book id", "Author", "Publisher", "Publication year"
+                "Title 1", "Title 2", "Title 3", "Title 4", "Title 5", "Title 6"
             }
         ));
-        jScrollPane1.setViewportView(TabelEdit);
+        tabelbuku.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tabelbukuMouseClicked(evt);
+            }
+        });
+        jScrollPane2.setViewportView(tabelbuku);
 
-        jPanel1.add(jScrollPane1);
-        jScrollPane1.setBounds(330, 110, 510, 230);
+        jPanel1.add(jScrollPane2);
+        jScrollPane2.setBounds(310, 70, 480, 260);
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Gambar/1222dd.jpg"))); // NOI18N
         jPanel1.add(background);
@@ -243,6 +283,22 @@ public class adminEditBuku extends javax.swing.JFrame {
         tahun_terbit.setText("");
     }//GEN-LAST:event_tambahActionPerformed
 
+    private void hapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hapusActionPerformed
+        // TODO add your handling code here:
+        int row = tabelbuku.getSelectedRow();
+        if(row>=0){
+            int ok = JOptionPane.showConfirmDialog(null, "Yakin Mau Hapus?", "Konfirmasi", JOptionPane.YES_NO_OPTION);
+            model.removeRow(row);
+            if(row == 0){
+                model.removeRow(row);
+            }
+        }
+    }//GEN-LAST:event_hapusActionPerformed
+
+    private void tabelbukuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelbukuMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tabelbukuMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -279,9 +335,9 @@ public class adminEditBuku extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTable TabelEdit;
     private javax.swing.JLabel background;
     private javax.swing.JButton batal;
+    private java.awt.Button hapus;
     private javax.swing.JTextField id;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -291,11 +347,12 @@ public class adminEditBuku extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField judul;
     private javax.swing.JButton kembali;
     private javax.swing.JTextField penerbit;
     private javax.swing.JTextField pengarang;
+    private javax.swing.JTable tabelbuku;
     private javax.swing.JTextField tahun_terbit;
     private javax.swing.JButton tambah;
     private javax.swing.JTextField textkategori;

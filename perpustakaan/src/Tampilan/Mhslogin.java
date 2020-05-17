@@ -112,7 +112,7 @@ public class Mhslogin extends javax.swing.JFrame {
         jPanel1.add(Kembali);
         Kembali.setBounds(30, 430, 80, 23);
 
-        background.setIcon(new javax.swing.ImageIcon("D:\\kuliah\\tugas tugas kelas\\PBO\\DITY_PBO-master\\perpustakaan\\src\\Gambar\\1222dd.jpg")); // NOI18N
+        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Gambar/1222dd.jpg"))); // NOI18N
         jPanel1.add(background);
         background.setBounds(-30, 0, 852, 480);
 
