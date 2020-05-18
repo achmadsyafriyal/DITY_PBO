@@ -76,7 +76,7 @@ public class MhsPertama extends javax.swing.JFrame {
         jPanel1.add(Kembali);
         Kembali.setBounds(40, 420, 80, 23);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\ASUS\\Pictures\\1222dd.jpg")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Gambar/1222dd.jpg"))); // NOI18N
         jPanel1.add(jLabel2);
         jLabel2.setBounds(0, 0, 860, 490);
 

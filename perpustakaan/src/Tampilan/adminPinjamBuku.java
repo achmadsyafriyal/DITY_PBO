@@ -5,28 +5,63 @@
  */
 package Tampilan;
 
+import com.toedter.calendar.JDateChooser;
 import java.sql.Connection;
 import java.sql.Statement;
 import mainclass.dbConnection;
 import java.awt.HeadlessException;
+import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+import javax.swing.JFormattedTextField;
+import javax.swing.text.DateFormatter;
 /**
  *
  * @author ASUS
  */
 public class adminPinjamBuku extends javax.swing.JFrame {
-
+DefaultTableModel model = new DefaultTableModel();
     /**
      * Creates new form adminbuku
      */
+    public void tampilkan_data(){
+            model.addColumn("id_peminjaman");
+            model.addColumn("NIM");
+            model.addColumn("NIP");
+            model.addColumn("id_Admin");
+            model.addColumn("id_Buku");
+            model.addColumn("Tgl_Pinjam");
+//            model.addColumn("Tgl_Kembali");
+
+            
+            
+            
+            try{
+                String sql = "SELECT * FROM buku";
+                java.sql.Connection kon = (Connection)dbConnection.dbConnection();
+                java.sql.Statement stat = kon.createStatement();
+                java.sql.ResultSet res = stat.executeQuery(sql);
+                
+                while (res.next()){
+                    model.addRow(new Object[]{res.getString(1),res.getString(2),res.getString(3),res.getString(4), res.getString(5), res.getString(6)});
+                }   
+                
+                tabelpinjam.setModel(model);
+     
+            }catch (SQLException e){
+                System.out.println("error : " + e.getMessage());
+            }
+        }    
     public adminPinjamBuku() {
         initComponents();
+        tampilkan_data();
     }
 
     /**
@@ -52,16 +87,18 @@ public class adminPinjamBuku extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
         idpinjam = new javax.swing.JTextField();
-        identitas = new javax.swing.JTextField();
+        nip = new javax.swing.JTextField();
+        nim = new javax.swing.JTextField();
         idbuku = new javax.swing.JTextField();
         idadmin = new javax.swing.JTextField();
-        tanggalpinjam = new javax.swing.JTextField();
-        tanggalkembali = new javax.swing.JTextField();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tabelpinjam = new javax.swing.JTable();
+        tanggalpinjam = new com.toedter.calendar.JDateChooser();
+        tanggalkembali = new com.toedter.calendar.JDateChooser();
         kembali = new javax.swing.JButton();
         editbuku = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        Table = new javax.swing.JTable();
         background = new javax.swing.JLabel();
 
         jLabel1.setText("jLabel1");
@@ -105,51 +142,79 @@ public class adminPinjamBuku extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Borrower  id     :");
+        jLabel3.setText("Borrower  id     ");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(20, 120, 101, 17);
+        jLabel3.setBounds(20, 120, 96, 17);
 
         jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Nip / Nim          :");
+        jLabel4.setText("NIM");
         jPanel1.add(jLabel4);
         jLabel4.setBounds(20, 160, 120, 17);
 
         jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Book id             : ");
+        jLabel5.setText("NIP");
         jPanel1.add(jLabel5);
         jLabel5.setBounds(20, 200, 130, 17);
 
         jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("Admin id          :");
+        jLabel6.setText("Book id          ");
         jPanel1.add(jLabel6);
         jLabel6.setBounds(20, 240, 110, 17);
 
         jLabel7.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText(" Back date        :");
+        jLabel7.setText("Borrowed date ");
         jPanel1.add(jLabel7);
         jLabel7.setBounds(20, 320, 110, 17);
 
         jLabel8.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("Borrowed date  :");
+        jLabel8.setText("Admin_id ");
         jPanel1.add(jLabel8);
         jLabel8.setBounds(20, 280, 110, 17);
+
+        jLabel10.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setText("Back date  ");
+        jPanel1.add(jLabel10);
+        jLabel10.setBounds(20, 360, 80, 17);
         jPanel1.add(idpinjam);
         idpinjam.setBounds(130, 120, 180, 20);
-        jPanel1.add(identitas);
-        identitas.setBounds(130, 160, 180, 20);
+        jPanel1.add(nip);
+        nip.setBounds(130, 160, 180, 20);
+        jPanel1.add(nim);
+        nim.setBounds(130, 200, 180, 20);
         jPanel1.add(idbuku);
-        idbuku.setBounds(130, 200, 180, 20);
+        idbuku.setBounds(130, 240, 180, 20);
         jPanel1.add(idadmin);
-        idadmin.setBounds(130, 240, 180, 20);
+        idadmin.setBounds(130, 280, 180, 20);
+
+        tabelpinjam.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane2.setViewportView(tabelpinjam);
+
+        jPanel1.add(jScrollPane2);
+        jScrollPane2.setBounds(370, 90, 430, 250);
+
+        tanggalpinjam.setDateFormatString("yyyy-MM-dd");
         jPanel1.add(tanggalpinjam);
-        tanggalpinjam.setBounds(130, 280, 180, 20);
+        tanggalpinjam.setBounds(130, 320, 180, 20);
+
+        tanggalkembali.setDateFormatString("yyyy-MM-dd");
         jPanel1.add(tanggalkembali);
-        tanggalkembali.setBounds(130, 320, 180, 20);
+        tanggalkembali.setBounds(130, 360, 180, 20);
 
         kembali.setText("Back");
         kembali.addActionListener(new java.awt.event.ActionListener() {
@@ -168,35 +233,6 @@ public class adminPinjamBuku extends javax.swing.JFrame {
         });
         jPanel1.add(editbuku);
         editbuku.setBounds(460, 350, 77, 23);
-
-        Table.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
-            },
-            new String [] {
-                "Borrower id", "Nip / Nim", "Book id ", "Admin id ", "Borrowed date ", "Back date "
-            }
-        ));
-        jScrollPane1.setViewportView(Table);
-
-        jPanel1.add(jScrollPane1);
-        jScrollPane1.setBounds(340, 120, 490, 220);
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Gambar/1222dd.jpg"))); // NOI18N
         jPanel1.add(background);
@@ -227,20 +263,22 @@ public class adminPinjamBuku extends javax.swing.JFrame {
     private void tambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tambahActionPerformed
         // TODO add your handling code here:
         int id_pinjam = Integer.parseInt(idpinjam.getText());
-        int Identitas = Integer.parseInt(identitas.getText());
+        int NIM = Integer.parseInt(nim.getText());
+        int NIP = Integer.parseInt(nip.getText());
         int id_buku = Integer.parseInt(idbuku.getText());
         int id_admin = Integer.parseInt(idadmin.getText());
-        Calendar kal = new GregorianCalendar();
-        int tahun = kal.get(Calendar.YEAR);
-        int bulan = kal.get(Calendar.MONTH);
-        int hari = kal.get(Calendar.DATE);
-        String tanggal = tahun+"-"+bulan+"-"+hari;
-        tanggalpinjam.setText(tanggal);
+        
+        String tampilan = "yyyy-MM-dd";
+        SimpleDateFormat fm = new SimpleDateFormat(tampilan);
+        String tglpinjam = String.valueOf(fm.format(tanggalpinjam.getDate()));
+//        java.sql.Date sql = new java.sql.Date(tanggalpinjam.getDate());
+        SimpleDateFormat kmb = new SimpleDateFormat(tampilan);
+        String tglkembali = String.valueOf(kmb.format(tanggalkembali.getDate()));
         
         try{
             java.sql.Connection con = (Connection) dbConnection.dbConnection();
             Statement statement= con.createStatement();
-            String insert = "INSERT INTO `buku` VALUES ('"+id_pinjam+"','"+Identitas+"','"+id_buku+"', '" + id_admin +"', '"+tanggalpinjam+"', '"+tanggalpinjam+"')"; 
+            String insert = "INSERT INTO `peminjaman` VALUES ('"+id_pinjam+"','"+NIM+"','"+NIP+"', '"+id_buku+"', '" + id_admin +"', '"+tglpinjam+"', '"+tglkembali+"')"; 
             statement.executeUpdate(insert);
             
             JOptionPane.showMessageDialog(null, "Data Berhasil Disimpan");
@@ -248,10 +286,10 @@ public class adminPinjamBuku extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, e.getMessage());
     }
         idpinjam.setText("");
-        identitas.setText("");
+        nip.setText("");
+        nim.setText("");
         idbuku.setText("");
         idadmin.setText("");
-        tanggalpinjam.setText("");
     }//GEN-LAST:event_tambahActionPerformed
 
     /**
@@ -293,7 +331,6 @@ public class adminPinjamBuku extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTable Table;
     private javax.swing.JLabel background;
     private javax.swing.JButton batal;
     private javax.swing.JButton edit;
@@ -301,9 +338,9 @@ public class adminPinjamBuku extends javax.swing.JFrame {
     private javax.swing.JButton hapus;
     private javax.swing.JTextField idadmin;
     private javax.swing.JTextField idbuku;
-    private javax.swing.JTextField identitas;
     private javax.swing.JTextField idpinjam;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -313,10 +350,13 @@ public class adminPinjamBuku extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JButton kembali;
+    private javax.swing.JTextField nim;
+    private javax.swing.JTextField nip;
+    private javax.swing.JTable tabelpinjam;
     private javax.swing.JButton tambah;
-    private javax.swing.JTextField tanggalkembali;
-    private javax.swing.JTextField tanggalpinjam;
+    private com.toedter.calendar.JDateChooser tanggalkembali;
+    private com.toedter.calendar.JDateChooser tanggalpinjam;
     // End of variables declaration//GEN-END:variables
 }

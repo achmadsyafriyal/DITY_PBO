@@ -136,7 +136,7 @@ public class Dsnlogin extends javax.swing.JFrame {
                 nipDosen.setText("");
                 nipDosen.requestFocus();
             }
-        MhsCaribuku a = new MhsCaribuku();
+        DsnCaribuku a = new DsnCaribuku();
         a.setVisible(true);
         this.dispose();
         }else{

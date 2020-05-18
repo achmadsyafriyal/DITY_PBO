@@ -4,6 +4,15 @@
  * and open the template in the editor.
  */
 package Tampilan;
+import java.sql.Connection;
+import java.sql.Statement;
+import mainclass.dbConnection;
+import java.awt.HeadlessException;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -30,6 +39,8 @@ public class DsnCaribuku extends javax.swing.JFrame {
         Cari = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         textcari = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tabelcari = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         Kembali = new javax.swing.JButton();
         background = new javax.swing.JLabel();
@@ -46,21 +57,37 @@ public class DsnCaribuku extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Cari);
-        Cari.setBounds(370, 230, 69, 23);
+        Cari.setBounds(360, 120, 69, 23);
 
         jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText(":");
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(281, 161, 5, 53);
+        jLabel5.setBounds(270, 50, 5, 53);
         getContentPane().add(textcari);
-        textcari.setBounds(304, 178, 203, 20);
+        textcari.setBounds(300, 70, 203, 20);
+
+        tabelcari.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(tabelcari);
+
+        getContentPane().add(jScrollPane1);
+        jScrollPane1.setBounds(60, 152, 710, 260);
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Search Book");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(191, 161, 80, 53);
+        jLabel1.setBounds(180, 50, 80, 53);
 
         Kembali.setBackground(new java.awt.Color(204, 204, 204));
         Kembali.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
@@ -82,6 +109,31 @@ public class DsnCaribuku extends javax.swing.JFrame {
 
     private void CariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CariActionPerformed
         // TODO add your handling code here:
+        DefaultTableModel model = new DefaultTableModel();
+            model.addColumn("ID");
+            model.addColumn("Judul");
+            model.addColumn("Kategori");
+            model.addColumn("Pengarang");
+            model.addColumn("Penerbit");
+            model.addColumn("tahun_terbit");
+            String querycari = textcari.getText();
+            
+            try{
+                String sql = "SELECT * FROM buku WHERE judul_buku like '%" +querycari+"'";
+                java.sql.Connection kon = (Connection)dbConnection.dbConnection();
+                java.sql.Statement stat = kon.createStatement();
+                java.sql.ResultSet res = stat.executeQuery(sql);
+                
+                while (res.next()){
+                    model.addRow(new Object[]{res.getString(1),res.getString(2),res.getString(3),res.getString(4), res.getString(5), res.getString(6)});
+                }   
+                
+                tabelcari.setModel(model);
+     
+            }catch (SQLException e){
+                System.out.println("error : " + e.getMessage());
+            }
+        
     }//GEN-LAST:event_CariActionPerformed
 
     private void KembaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_KembaliActionPerformed
@@ -130,6 +182,8 @@ public class DsnCaribuku extends javax.swing.JFrame {
     private javax.swing.JLabel background;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable tabelcari;
     private javax.swing.JTextField textcari;
     // End of variables declaration//GEN-END:variables
 }

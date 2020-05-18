@@ -87,7 +87,7 @@ public class Mhslogin extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Username");
+        jLabel1.setText("Nama");
         jPanel1.add(jLabel1);
         jLabel1.setBounds(210, 140, 87, 53);
 
@@ -99,7 +99,7 @@ public class Mhslogin extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Password");
+        jLabel3.setText("NIM");
         jPanel1.add(jLabel3);
         jLabel3.setBounds(210, 190, 87, 53);
 
@@ -151,7 +151,7 @@ public class Mhslogin extends javax.swing.JFrame {
                 nim.setText("");
                 nim.requestFocus();
             }
-        MhsCaribuku a = new MhsCaribuku();
+        DsnCaribuku a = new DsnCaribuku();
         a.setVisible(true);
         this.dispose();
         }else{
