@@ -37,24 +37,24 @@ public class MhsDaftar extends javax.swing.JFrame {
         Kembali = new javax.swing.JToggleButton();
         Daftar = new javax.swing.JToggleButton();
         JUdul = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
         nama = new javax.swing.JTextField();
         jLabel20 = new javax.swing.JLabel();
         nim = new javax.swing.JTextField();
         jLabel22 = new javax.swing.JLabel();
-        jLabel23 = new javax.swing.JLabel();
-        jLabel24 = new javax.swing.JLabel();
         prodi = new javax.swing.JTextField();
         alamat = new javax.swing.JTextField();
         telepon1 = new javax.swing.JTextField();
-        jLabel25 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
         background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
         jPanel2.setLayout(null);
 
@@ -82,29 +82,17 @@ public class MhsDaftar extends javax.swing.JFrame {
         jPanel2.add(JUdul);
         JUdul.setBounds(280, 30, 360, 42);
 
-        jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText(":");
-        jPanel2.add(jLabel5);
-        jLabel5.setBounds(340, 200, 5, 17);
-
         jLabel16.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(255, 255, 255));
         jLabel16.setText("Prodi");
         jPanel2.add(jLabel16);
-        jLabel16.setBounds(250, 200, 62, 17);
+        jLabel16.setBounds(280, 230, 62, 17);
 
         jLabel18.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(255, 255, 255));
         jLabel18.setText("Address");
         jPanel2.add(jLabel18);
-        jLabel18.setBounds(250, 230, 62, 17);
-
-        jLabel19.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jLabel19.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel19.setText(":");
-        jPanel2.add(jLabel19);
-        jLabel19.setBounds(340, 170, 5, 17);
+        jLabel18.setBounds(280, 270, 62, 17);
 
         nama.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -112,51 +100,33 @@ public class MhsDaftar extends javax.swing.JFrame {
             }
         });
         jPanel2.add(nama);
-        nama.setBounds(380, 170, 180, 20);
+        nama.setBounds(380, 180, 180, 30);
 
         jLabel20.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(255, 255, 255));
         jLabel20.setText("Name");
         jPanel2.add(jLabel20);
-        jLabel20.setBounds(250, 170, 62, 17);
+        jLabel20.setBounds(280, 190, 62, 17);
         jPanel2.add(nim);
-        nim.setBounds(380, 140, 180, 20);
+        nim.setBounds(380, 140, 180, 30);
 
         jLabel22.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel22.setForeground(new java.awt.Color(255, 255, 255));
         jLabel22.setText("NIM");
         jPanel2.add(jLabel22);
-        jLabel22.setBounds(250, 140, 62, 17);
-
-        jLabel23.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jLabel23.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel23.setText(":");
-        jPanel2.add(jLabel23);
-        jLabel23.setBounds(340, 140, 5, 17);
-
-        jLabel24.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jLabel24.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel24.setText(":");
-        jPanel2.add(jLabel24);
-        jLabel24.setBounds(340, 230, 5, 17);
+        jLabel22.setBounds(280, 150, 62, 17);
         jPanel2.add(prodi);
-        prodi.setBounds(380, 200, 180, 20);
+        prodi.setBounds(380, 220, 180, 30);
         jPanel2.add(alamat);
-        alamat.setBounds(380, 230, 180, 20);
+        alamat.setBounds(380, 260, 180, 30);
         jPanel2.add(telepon1);
-        telepon1.setBounds(380, 260, 180, 20);
-
-        jLabel25.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jLabel25.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel25.setText(":");
-        jPanel2.add(jLabel25);
-        jLabel25.setBounds(340, 260, 5, 17);
+        telepon1.setBounds(380, 300, 180, 30);
 
         jLabel26.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel26.setForeground(new java.awt.Color(255, 255, 255));
         jLabel26.setText("No phone");
         jPanel2.add(jLabel26);
-        jLabel26.setBounds(250, 260, 80, 17);
+        jLabel26.setBounds(280, 310, 80, 17);
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Gambar/1222dd.jpg"))); // NOI18N
         jPanel2.add(background);
@@ -194,17 +164,28 @@ public class MhsDaftar extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Data Berhasil Disimpan");
         } catch (HeadlessException | SQLException e){
             JOptionPane.showMessageDialog(this, e.getMessage());
-    } 
+    }
+        MhsPertama a = new MhsPertama();
+        a.setVisible(true);
+        this.dispose();
         
     }//GEN-LAST:event_DaftarActionPerformed
 
     private void KembaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_KembaliActionPerformed
         // TODO add your handling code here:
+        MhsPertama a = new MhsPertama();
+        a.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_KembaliActionPerformed
 
     private void namaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_namaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_namaActionPerformed
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        // TODO add your handling code here:
+        setExtendedState(MhsDaftar.MAXIMIZED_BOTH);
+    }//GEN-LAST:event_formWindowOpened
 
     /**
      * @param args the command line arguments
@@ -249,14 +230,9 @@ public class MhsDaftar extends javax.swing.JFrame {
     private javax.swing.JLabel background;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField nama;
     private javax.swing.JTextField nim;

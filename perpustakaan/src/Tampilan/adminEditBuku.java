@@ -87,6 +87,11 @@ public class adminEditBuku extends javax.swing.JFrame {
         background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(null);
@@ -119,7 +124,7 @@ public class adminEditBuku extends javax.swing.JFrame {
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Author               :");
         jPanel1.add(jLabel7);
-        jLabel7.setBounds(10, 230, 120, 17);
+        jLabel7.setBounds(10, 240, 120, 17);
 
         jLabel8.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
@@ -131,13 +136,13 @@ public class adminEditBuku extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Publish               :");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(10, 270, 120, 17);
+        jLabel1.setBounds(10, 280, 120, 17);
 
         jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Publication year  :");
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(10, 310, 220, 17);
+        jLabel4.setBounds(10, 320, 220, 17);
 
         jLabel10.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
@@ -163,14 +168,12 @@ public class adminEditBuku extends javax.swing.JFrame {
         });
         jPanel1.add(hapus);
         hapus.setBounds(610, 370, 90, 30);
-        hapus.getAccessibleContext().setAccessibleName("Delete");
-
         jPanel1.add(judul);
-        judul.setBounds(140, 160, 160, 20);
+        judul.setBounds(140, 150, 160, 30);
         jPanel1.add(textkategori);
-        textkategori.setBounds(140, 200, 160, 20);
+        textkategori.setBounds(140, 190, 160, 30);
         jPanel1.add(pengarang);
-        pengarang.setBounds(140, 230, 160, 20);
+        pengarang.setBounds(140, 230, 160, 30);
 
         penerbit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -178,7 +181,7 @@ public class adminEditBuku extends javax.swing.JFrame {
             }
         });
         jPanel1.add(penerbit);
-        penerbit.setBounds(140, 270, 160, 20);
+        penerbit.setBounds(140, 270, 160, 30);
 
         tahun_terbit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -186,9 +189,9 @@ public class adminEditBuku extends javax.swing.JFrame {
             }
         });
         jPanel1.add(tahun_terbit);
-        tahun_terbit.setBounds(140, 310, 160, 20);
+        tahun_terbit.setBounds(140, 310, 160, 30);
         jPanel1.add(id);
-        id.setBounds(140, 120, 160, 20);
+        id.setBounds(140, 110, 160, 30);
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -241,6 +244,9 @@ public class adminEditBuku extends javax.swing.JFrame {
 
     private void kembaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kembaliActionPerformed
         // TODO add your handling code here:
+        adminPinjamBuku a = new adminPinjamBuku();
+        a.setVisible(true);
+        this.dispose();        
     }//GEN-LAST:event_kembaliActionPerformed
 
     private void batalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_batalActionPerformed
@@ -298,6 +304,11 @@ public class adminEditBuku extends javax.swing.JFrame {
     private void tabelbukuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelbukuMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_tabelbukuMouseClicked
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        // TODO add your handling code here:
+        setExtendedState(adminEditBuku.MAXIMIZED_BOTH);
+    }//GEN-LAST:event_formWindowOpened
 
     /**
      * @param args the command line arguments

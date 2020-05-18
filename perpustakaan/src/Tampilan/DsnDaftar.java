@@ -37,21 +37,22 @@ public class DsnDaftar extends javax.swing.JFrame {
         Kembali = new javax.swing.JToggleButton();
         Daftar = new javax.swing.JToggleButton();
         JUdul = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
         NamaDosen = new javax.swing.JTextField();
         jLabel20 = new javax.swing.JLabel();
         nipdosen = new javax.swing.JTextField();
         jLabel22 = new javax.swing.JLabel();
-        jLabel23 = new javax.swing.JLabel();
         alamatDosen = new javax.swing.JTextField();
         jLabel21 = new javax.swing.JLabel();
-        jLabel25 = new javax.swing.JLabel();
         teleponDosen = new javax.swing.JTextField();
         background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
         getContentPane().setLayout(null);
 
         Kembali.setText("Back");
@@ -78,23 +79,11 @@ public class DsnDaftar extends javax.swing.JFrame {
         getContentPane().add(JUdul);
         JUdul.setBounds(280, 30, 360, 42);
 
-        jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText(":");
-        getContentPane().add(jLabel5);
-        jLabel5.setBounds(340, 200, 5, 17);
-
         jLabel16.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(255, 255, 255));
         jLabel16.setText("Address");
         getContentPane().add(jLabel16);
-        jLabel16.setBounds(250, 200, 62, 17);
-
-        jLabel19.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jLabel19.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel19.setText(":");
-        getContentPane().add(jLabel19);
-        jLabel19.setBounds(340, 170, 5, 17);
+        jLabel16.setBounds(280, 220, 62, 17);
 
         NamaDosen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -102,43 +91,31 @@ public class DsnDaftar extends javax.swing.JFrame {
             }
         });
         getContentPane().add(NamaDosen);
-        NamaDosen.setBounds(380, 170, 180, 20);
+        NamaDosen.setBounds(380, 170, 180, 30);
 
         jLabel20.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(255, 255, 255));
         jLabel20.setText("Name");
         getContentPane().add(jLabel20);
-        jLabel20.setBounds(250, 170, 62, 17);
+        jLabel20.setBounds(280, 180, 62, 17);
         getContentPane().add(nipdosen);
-        nipdosen.setBounds(380, 140, 180, 20);
+        nipdosen.setBounds(380, 130, 180, 30);
 
         jLabel22.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel22.setForeground(new java.awt.Color(255, 255, 255));
         jLabel22.setText("NIP");
         getContentPane().add(jLabel22);
-        jLabel22.setBounds(250, 140, 62, 17);
-
-        jLabel23.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jLabel23.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel23.setText(":");
-        getContentPane().add(jLabel23);
-        jLabel23.setBounds(340, 140, 5, 17);
+        jLabel22.setBounds(280, 140, 62, 17);
         getContentPane().add(alamatDosen);
-        alamatDosen.setBounds(380, 200, 180, 20);
+        alamatDosen.setBounds(380, 210, 180, 30);
 
         jLabel21.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel21.setForeground(new java.awt.Color(255, 255, 255));
         jLabel21.setText("No phone");
         getContentPane().add(jLabel21);
-        jLabel21.setBounds(250, 230, 80, 17);
-
-        jLabel25.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jLabel25.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel25.setText(":");
-        getContentPane().add(jLabel25);
-        jLabel25.setBounds(340, 230, 5, 17);
+        jLabel21.setBounds(280, 260, 80, 17);
         getContentPane().add(teleponDosen);
-        teleponDosen.setBounds(380, 230, 180, 20);
+        teleponDosen.setBounds(380, 250, 180, 30);
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Gambar/1222dd.jpg"))); // NOI18N
         getContentPane().add(background);
@@ -149,6 +126,9 @@ public class DsnDaftar extends javax.swing.JFrame {
 
     private void KembaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_KembaliActionPerformed
         // TODO add your handling code here:
+        DsnPertama a = new DsnPertama();
+        a.setVisible(true);
+        this.dispose();        
     }//GEN-LAST:event_KembaliActionPerformed
 
     private void DaftarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DaftarActionPerformed
@@ -175,6 +155,11 @@ public class DsnDaftar extends javax.swing.JFrame {
     private void NamaDosenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NamaDosenActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_NamaDosenActionPerformed
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        // TODO add your handling code here:
+        setExtendedState(DsnDaftar.MAXIMIZED_BOTH);
+    }//GEN-LAST:event_formWindowOpened
 
     /**
      * @param args the command line arguments
@@ -219,13 +204,9 @@ public class DsnDaftar extends javax.swing.JFrame {
     private javax.swing.JTextField alamatDosen;
     private javax.swing.JLabel background;
     private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JTextField nipdosen;
     private javax.swing.JTextField teleponDosen;
     // End of variables declaration//GEN-END:variables

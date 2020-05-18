@@ -35,11 +35,9 @@ public class Mhslogin extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
         nama = new javax.swing.JTextField();
         nim = new javax.swing.JPasswordField();
         login = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -47,18 +45,17 @@ public class Mhslogin extends javax.swing.JFrame {
         background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setPreferredSize(new java.awt.Dimension(626, 395));
         jPanel1.setLayout(null);
-
-        jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText(":");
-        jPanel1.add(jLabel5);
-        jLabel5.setBounds(300, 140, 5, 53);
         jPanel1.add(nama);
-        nama.setBounds(320, 160, 203, 20);
+        nama.setBounds(320, 150, 203, 30);
 
         nim.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -66,7 +63,7 @@ public class Mhslogin extends javax.swing.JFrame {
             }
         });
         jPanel1.add(nim);
-        nim.setBounds(320, 210, 204, 20);
+        nim.setBounds(320, 210, 204, 30);
 
         login.setBackground(new java.awt.Color(44, 62, 80));
         login.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
@@ -79,17 +76,11 @@ public class Mhslogin extends javax.swing.JFrame {
         jPanel1.add(login);
         login.setBounds(360, 270, 110, 20);
 
-        jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText(":");
-        jPanel1.add(jLabel4);
-        jLabel4.setBounds(300, 190, 5, 53);
-
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Nama");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(210, 140, 87, 53);
+        jLabel1.setBounds(240, 140, 87, 53);
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -101,7 +92,7 @@ public class Mhslogin extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("NIM");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(210, 190, 87, 53);
+        jLabel3.setBounds(240, 200, 87, 53);
 
         Kembali.setText("Back");
         Kembali.addActionListener(new java.awt.event.ActionListener() {
@@ -151,7 +142,7 @@ public class Mhslogin extends javax.swing.JFrame {
                 nim.setText("");
                 nim.requestFocus();
             }
-        DsnCaribuku a = new DsnCaribuku();
+        CariBuku a = new CariBuku();
         a.setVisible(true);
         this.dispose();
         }else{
@@ -165,11 +156,19 @@ public class Mhslogin extends javax.swing.JFrame {
 
     private void KembaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_KembaliActionPerformed
         // TODO add your handling code here:
+        MhsPertama a = new MhsPertama();
+        a.setVisible(true);
+        this.dispose();        
     }//GEN-LAST:event_KembaliActionPerformed
 
     private void nimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nimActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_nimActionPerformed
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        // TODO add your handling code here:
+        setExtendedState(Mhslogin.MAXIMIZED_BOTH);
+    }//GEN-LAST:event_formWindowOpened
 
     /**
      * @param args the command line arguments
@@ -212,8 +211,6 @@ public class Mhslogin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton login;
     private javax.swing.JTextField nama;

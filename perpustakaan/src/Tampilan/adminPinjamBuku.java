@@ -38,19 +38,19 @@ DefaultTableModel model = new DefaultTableModel();
             model.addColumn("id_Admin");
             model.addColumn("id_Buku");
             model.addColumn("Tgl_Pinjam");
-//            model.addColumn("Tgl_Kembali");
+            model.addColumn("Tgl_Kembali");
 
             
             
             
             try{
-                String sql = "SELECT * FROM buku";
+                String sql = "SELECT * FROM peminjaman";
                 java.sql.Connection kon = (Connection)dbConnection.dbConnection();
                 java.sql.Statement stat = kon.createStatement();
                 java.sql.ResultSet res = stat.executeQuery(sql);
                 
                 while (res.next()){
-                    model.addRow(new Object[]{res.getString(1),res.getString(2),res.getString(3),res.getString(4), res.getString(5), res.getString(6)});
+                    model.addRow(new Object[]{res.getString(1),res.getString(2),res.getString(3),res.getString(4), res.getString(5), res.getString(6), res.getString(7)});
                 }   
                 
                 tabelpinjam.setModel(model);
@@ -77,10 +77,8 @@ DefaultTableModel model = new DefaultTableModel();
         jLabel9 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        batal = new javax.swing.JButton();
         hapus = new javax.swing.JButton();
         tambah = new javax.swing.JButton();
-        edit = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -89,8 +87,8 @@ DefaultTableModel model = new DefaultTableModel();
         jLabel8 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         idpinjam = new javax.swing.JTextField();
-        nip = new javax.swing.JTextField();
         nim = new javax.swing.JTextField();
+        nip = new javax.swing.JTextField();
         idbuku = new javax.swing.JTextField();
         idadmin = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -108,6 +106,11 @@ DefaultTableModel model = new DefaultTableModel();
         jLabel9.setText(":");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setPreferredSize(new java.awt.Dimension(772, 440));
@@ -119,13 +122,14 @@ DefaultTableModel model = new DefaultTableModel();
         jPanel1.add(jLabel2);
         jLabel2.setBounds(270, 20, 326, 57);
 
-        batal.setText("Cencel");
-        jPanel1.add(batal);
-        batal.setBounds(730, 350, 70, 23);
-
         hapus.setText("Delete");
+        hapus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                hapusActionPerformed(evt);
+            }
+        });
         jPanel1.add(hapus);
-        hapus.setBounds(640, 350, 63, 23);
+        hapus.setBounds(550, 350, 63, 23);
 
         tambah.setText("Add");
         tambah.addActionListener(new java.awt.event.ActionListener() {
@@ -135,10 +139,6 @@ DefaultTableModel model = new DefaultTableModel();
         });
         jPanel1.add(tambah);
         tambah.setBounds(390, 350, 51, 23);
-
-        edit.setText("Edit");
-        jPanel1.add(edit);
-        edit.setBounds(560, 350, 51, 23);
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -182,15 +182,15 @@ DefaultTableModel model = new DefaultTableModel();
         jPanel1.add(jLabel10);
         jLabel10.setBounds(20, 360, 80, 17);
         jPanel1.add(idpinjam);
-        idpinjam.setBounds(130, 120, 180, 20);
-        jPanel1.add(nip);
-        nip.setBounds(130, 160, 180, 20);
+        idpinjam.setBounds(130, 110, 180, 30);
         jPanel1.add(nim);
-        nim.setBounds(130, 200, 180, 20);
+        nim.setBounds(130, 150, 180, 30);
+        jPanel1.add(nip);
+        nip.setBounds(130, 190, 180, 30);
         jPanel1.add(idbuku);
-        idbuku.setBounds(130, 240, 180, 20);
+        idbuku.setBounds(130, 230, 180, 30);
         jPanel1.add(idadmin);
-        idadmin.setBounds(130, 280, 180, 20);
+        idadmin.setBounds(130, 270, 180, 30);
 
         tabelpinjam.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -210,11 +210,11 @@ DefaultTableModel model = new DefaultTableModel();
 
         tanggalpinjam.setDateFormatString("yyyy-MM-dd");
         jPanel1.add(tanggalpinjam);
-        tanggalpinjam.setBounds(130, 320, 180, 20);
+        tanggalpinjam.setBounds(130, 310, 180, 30);
 
         tanggalkembali.setDateFormatString("yyyy-MM-dd");
         jPanel1.add(tanggalkembali);
-        tanggalkembali.setBounds(130, 360, 180, 20);
+        tanggalkembali.setBounds(130, 350, 180, 30);
 
         kembali.setText("Back");
         kembali.addActionListener(new java.awt.event.ActionListener() {
@@ -254,10 +254,16 @@ DefaultTableModel model = new DefaultTableModel();
 
     private void kembaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kembaliActionPerformed
         // TODO add your handling code here:
+       adminlogin a = new adminlogin();
+        a.setVisible(true);
+        this.dispose();        
     }//GEN-LAST:event_kembaliActionPerformed
 
     private void editbukuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editbukuActionPerformed
         // TODO add your handling code here:
+        adminEditBuku a = new adminEditBuku();
+        a.setVisible(true);
+        this.dispose();        
     }//GEN-LAST:event_editbukuActionPerformed
 
     private void tambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tambahActionPerformed
@@ -286,11 +292,28 @@ DefaultTableModel model = new DefaultTableModel();
             JOptionPane.showMessageDialog(this, e.getMessage());
     }
         idpinjam.setText("");
-        nip.setText("");
         nim.setText("");
+        nip.setText("");
         idbuku.setText("");
         idadmin.setText("");
     }//GEN-LAST:event_tambahActionPerformed
+
+    private void hapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hapusActionPerformed
+        // TODO add your handling code here:
+        int row = tabelpinjam.getSelectedRow();
+        if(row>=0){
+            int ok = JOptionPane.showConfirmDialog(null, "Yakin Mau Hapus?", "Konfirmasi", JOptionPane.YES_NO_OPTION);
+            model.removeRow(row);
+            if(row == 0){
+                model.removeRow(row);
+            }
+        }        
+    }//GEN-LAST:event_hapusActionPerformed
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        // TODO add your handling code here:
+        setExtendedState(adminPinjamBuku.MAXIMIZED_BOTH);
+    }//GEN-LAST:event_formWindowOpened
 
     /**
      * @param args the command line arguments
@@ -332,8 +355,6 @@ DefaultTableModel model = new DefaultTableModel();
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel background;
-    private javax.swing.JButton batal;
-    private javax.swing.JButton edit;
     private javax.swing.JButton editbuku;
     private javax.swing.JButton hapus;
     private javax.swing.JTextField idadmin;

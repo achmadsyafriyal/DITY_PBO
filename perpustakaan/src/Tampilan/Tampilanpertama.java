@@ -36,8 +36,8 @@ public class Tampilanpertama extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        logiAdmin = new javax.swing.JButton();
-        loginmhs1 = new javax.swing.JButton();
+        btnadmin = new javax.swing.JButton();
+        btnpengunjung = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -79,30 +79,35 @@ public class Tampilanpertama extends javax.swing.JFrame {
         jLabel4.setText(":");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
         jPanel1.setLayout(null);
 
-        logiAdmin.setBackground(new java.awt.Color(44, 62, 80));
-        logiAdmin.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        logiAdmin.setText("Admin ");
-        logiAdmin.addActionListener(new java.awt.event.ActionListener() {
+        btnadmin.setBackground(new java.awt.Color(44, 62, 80));
+        btnadmin.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        btnadmin.setText("Admin ");
+        btnadmin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                logiAdminActionPerformed(evt);
+                btnadminActionPerformed(evt);
             }
         });
-        jPanel1.add(logiAdmin);
-        logiAdmin.setBounds(460, 400, 240, 23);
+        jPanel1.add(btnadmin);
+        btnadmin.setBounds(460, 400, 240, 23);
 
-        loginmhs1.setBackground(new java.awt.Color(44, 62, 80));
-        loginmhs1.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        loginmhs1.setText("Visitor");
-        loginmhs1.addActionListener(new java.awt.event.ActionListener() {
+        btnpengunjung.setBackground(new java.awt.Color(44, 62, 80));
+        btnpengunjung.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        btnpengunjung.setText("Visitor");
+        btnpengunjung.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                loginmhs1ActionPerformed(evt);
+                btnpengunjungActionPerformed(evt);
             }
         });
-        jPanel1.add(loginmhs1);
-        loginmhs1.setBounds(80, 400, 240, 23);
+        jPanel1.add(btnpengunjung);
+        btnpengunjung.setBounds(80, 400, 240, 23);
 
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Gambar/mahasiswa.jpg"))); // NOI18N
         jPanel1.add(jLabel10);
@@ -118,9 +123,9 @@ public class Tampilanpertama extends javax.swing.JFrame {
         jPanel1.add(jLabel6);
         jLabel6.setBounds(110, -30, 680, 130);
 
-        jLabel7.setIcon(new javax.swing.ImageIcon("D:\\kuliah\\PBO\\TUBES\\perpustakaan\\src\\Gambar\\1222dd.jpg")); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Gambar/1222dd.jpg"))); // NOI18N
         jPanel1.add(jLabel7);
-        jLabel7.setBounds(-6, -6, 970, 480);
+        jLabel7.setBounds(-6, -6, 970, 490);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -144,13 +149,24 @@ public class Tampilanpertama extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jPasswordField1ActionPerformed
 
-    private void logiAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logiAdminActionPerformed
+    private void btnadminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnadminActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_logiAdminActionPerformed
+        adminlogin a = new adminlogin();
+        a.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnadminActionPerformed
 
-    private void loginmhs1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginmhs1ActionPerformed
+    private void btnpengunjungActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnpengunjungActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_loginmhs1ActionPerformed
+        TampilanPengunjung a = new TampilanPengunjung();
+        a.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnpengunjungActionPerformed
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        // TODO add your handling code here:
+        setExtendedState(Tampilanpertama.MAXIMIZED_BOTH);
+    }//GEN-LAST:event_formWindowOpened
 
     /**
      * @param args the command line arguments
@@ -188,6 +204,8 @@ public class Tampilanpertama extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnadmin;
+    private javax.swing.JButton btnpengunjung;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -201,7 +219,5 @@ public class Tampilanpertama extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JButton logiAdmin;
-    private javax.swing.JButton loginmhs1;
     // End of variables declaration//GEN-END:variables
 }

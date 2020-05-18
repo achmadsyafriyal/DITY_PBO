@@ -34,11 +34,9 @@ public class Dsnlogin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel5 = new javax.swing.JLabel();
         namaDosen = new javax.swing.JTextField();
         nipDosen = new javax.swing.JPasswordField();
         login = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -46,15 +44,14 @@ public class Dsnlogin extends javax.swing.JFrame {
         background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
         getContentPane().setLayout(null);
-
-        jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText(":");
-        getContentPane().add(jLabel5);
-        jLabel5.setBounds(300, 140, 5, 53);
         getContentPane().add(namaDosen);
-        namaDosen.setBounds(320, 160, 203, 20);
+        namaDosen.setBounds(320, 150, 203, 30);
 
         nipDosen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -62,7 +59,7 @@ public class Dsnlogin extends javax.swing.JFrame {
             }
         });
         getContentPane().add(nipDosen);
-        nipDosen.setBounds(320, 220, 204, 20);
+        nipDosen.setBounds(320, 210, 204, 30);
 
         login.setBackground(new java.awt.Color(44, 62, 80));
         login.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
@@ -75,17 +72,11 @@ public class Dsnlogin extends javax.swing.JFrame {
         getContentPane().add(login);
         login.setBounds(360, 270, 110, 20);
 
-        jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText(":");
-        getContentPane().add(jLabel4);
-        jLabel4.setBounds(300, 200, 5, 53);
-
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Name");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(210, 140, 87, 53);
+        jLabel1.setBounds(250, 140, 87, 53);
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -97,7 +88,7 @@ public class Dsnlogin extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("NIP");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(210, 200, 87, 53);
+        jLabel3.setBounds(250, 200, 87, 53);
 
         Kembali.setText("Back");
         Kembali.addActionListener(new java.awt.event.ActionListener() {
@@ -136,7 +127,7 @@ public class Dsnlogin extends javax.swing.JFrame {
                 nipDosen.setText("");
                 nipDosen.requestFocus();
             }
-        DsnCaribuku a = new DsnCaribuku();
+        CariBuku a = new CariBuku();
         a.setVisible(true);
         this.dispose();
         }else{
@@ -151,7 +142,15 @@ public class Dsnlogin extends javax.swing.JFrame {
 
     private void KembaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_KembaliActionPerformed
         // TODO add your handling code here:
+        DsnPertama a = new DsnPertama();
+        a.setVisible(true);
+        this.dispose();        
     }//GEN-LAST:event_KembaliActionPerformed
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        // TODO add your handling code here:
+        setExtendedState(Dsnlogin.MAXIMIZED_BOTH);
+    }//GEN-LAST:event_formWindowOpened
 
     /**
      * @param args the command line arguments
@@ -194,8 +193,6 @@ public class Dsnlogin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JButton login;
     private javax.swing.JTextField namaDosen;
     private javax.swing.JPasswordField nipDosen;

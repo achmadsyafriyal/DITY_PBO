@@ -28,27 +28,32 @@ public class TampilanPengunjung extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        daftarakunMhs = new javax.swing.JButton();
+        mhs = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         Kembali = new javax.swing.JToggleButton();
-        daftarakunMhs1 = new javax.swing.JButton();
+        dsn = new javax.swing.JButton();
         background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(null);
 
-        daftarakunMhs.setBackground(new java.awt.Color(44, 62, 80));
-        daftarakunMhs.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        daftarakunMhs.setText("Student");
-        daftarakunMhs.addActionListener(new java.awt.event.ActionListener() {
+        mhs.setBackground(new java.awt.Color(44, 62, 80));
+        mhs.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        mhs.setText("Student");
+        mhs.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                daftarakunMhsActionPerformed(evt);
+                mhsActionPerformed(evt);
             }
         });
-        jPanel1.add(daftarakunMhs);
-        daftarakunMhs.setBounds(360, 190, 126, 29);
+        jPanel1.add(mhs);
+        mhs.setBounds(360, 190, 126, 29);
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -65,16 +70,16 @@ public class TampilanPengunjung extends javax.swing.JFrame {
         jPanel1.add(Kembali);
         Kembali.setBounds(40, 420, 80, 23);
 
-        daftarakunMhs1.setBackground(new java.awt.Color(44, 62, 80));
-        daftarakunMhs1.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        daftarakunMhs1.setText("Lecturer");
-        daftarakunMhs1.addActionListener(new java.awt.event.ActionListener() {
+        dsn.setBackground(new java.awt.Color(44, 62, 80));
+        dsn.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        dsn.setText("Lecturer");
+        dsn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                daftarakunMhs1ActionPerformed(evt);
+                dsnActionPerformed(evt);
             }
         });
-        jPanel1.add(daftarakunMhs1);
-        daftarakunMhs1.setBounds(360, 230, 126, 29);
+        jPanel1.add(dsn);
+        dsn.setBounds(360, 230, 126, 29);
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Gambar/1222dd.jpg"))); // NOI18N
         jPanel1.add(background);
@@ -94,17 +99,31 @@ public class TampilanPengunjung extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void daftarakunMhsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_daftarakunMhsActionPerformed
+    private void mhsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mhsActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_daftarakunMhsActionPerformed
+        MhsPertama a = new MhsPertama();
+        a.setVisible(true);
+        this.dispose();           
+    }//GEN-LAST:event_mhsActionPerformed
 
     private void KembaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_KembaliActionPerformed
         // TODO add your handling code here:
+        Tampilanpertama a = new Tampilanpertama();
+        a.setVisible(true);
+        this.dispose();        
     }//GEN-LAST:event_KembaliActionPerformed
 
-    private void daftarakunMhs1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_daftarakunMhs1ActionPerformed
+    private void dsnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dsnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_daftarakunMhs1ActionPerformed
+        DsnPertama a = new DsnPertama();
+        a.setVisible(true);
+        this.dispose();           
+    }//GEN-LAST:event_dsnActionPerformed
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        // TODO add your handling code here:
+        setExtendedState(TampilanPengunjung.MAXIMIZED_BOTH);
+    }//GEN-LAST:event_formWindowOpened
 
     /**
      * @param args the command line arguments
@@ -145,9 +164,9 @@ public class TampilanPengunjung extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton Kembali;
     private javax.swing.JLabel background;
-    private javax.swing.JButton daftarakunMhs;
-    private javax.swing.JButton daftarakunMhs1;
+    private javax.swing.JButton dsn;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton mhs;
     // End of variables declaration//GEN-END:variables
 }
